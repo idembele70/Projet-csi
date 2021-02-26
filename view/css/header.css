@@ -4,6 +4,7 @@ header{
     align-items: center;
     background: var(--primary-dark-color);
     height: 120px;
+    padding: 0 20px;
 }
 header > *:not(span){
     height: 60px;
@@ -28,9 +29,6 @@ header > *:not(span){
     background: var(--primary-white-color);
     text-decoration: none;
 }
-.nav-item:last-child{
-    margin-right: 20px;
-}
 
 @media screen and (max-width:800px){
     header {
@@ -54,6 +52,11 @@ header > *:not(span){
         align-items: center;
         justify-content: center;
     }
+    
+    .hamburger-item-disable{
+        animation: HamburgerDisable 2s; 
+        /* transition: margin 6050ms ease-in; */
+    }
 
     .hamburger-item{
         width: 39px;
@@ -75,23 +78,50 @@ header > *:not(span){
     .hamburger-item-enable{
         position: absolute;
         transform-origin: 50%;
-
+        animation: HamburgerEnable 2s;
     }
-
+    
     .hamburger-item-enable:first-child {
+        display: none;
+        
+    }
+    
+    .hamburger-item-enable:nth-child(2){
         top: 20px;
-        left: 0;
+        right: 0;
+        transform: rotate(-45deg);
         background-color: blue;
     }
 
-    .hamburger-item-enable:nth-child(2){
-        display: none;
-    }
-
     .hamburger-item-enable:last-of-type {
-        top: 30px;
-        left: 10;
+        top: 50%; 
+        left: 0;
+        transform: rotate(45deg);
         background-color: red;
     }
 
 }
+
+@keyframes HamburgerEnable{
+    0%{
+        transform: rotate(0);
+    }
+   
+}
+
+@keyframes HamburgerDisable{
+ from{
+       margin-bottom: 0;
+    }
+    to {
+        margin-bottom: 7px;
+    }
+}
+@keyframes HamburgerDisableToEnable{
+    from{
+        margin-bottom: 7px;
+    }
+    to {
+        margin-bottom: 0;
+    }
+   }
