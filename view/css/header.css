@@ -8,7 +8,7 @@
     justify-content: space-between;
     height: 120px;
 }
-.header > *:not(span){
+.header > *:not(span):not(.nav-list-enable){
     height: 60px;
     text-align: center;
     line-height: 60px;
@@ -17,10 +17,8 @@
 .header-enable {
     height: 320px
 }
-
-.titre-principale{
+.logo{
     width: 150px;
-    background: var(--primary-white-color);
 }
 
 .nav-list{
@@ -38,21 +36,35 @@
 @media screen and (max-width:800px){
     .header {
        display: grid;
-       grid-template:1fr 1fr / 1fr 1fr ;
-       justify-items: ;
+       justify-items: start;
+       align-items: start;
+       transition: height 500ms ease-in;
     }
     .header-disable{
         padding: 0% 20px;
+       grid-template: 10px 1fr 1fr / 1fr 1fr;
     }
-    .header *:not(.nav-list):not(.hamburger-item) {
+    .header-enable{
+        grid-template:10px 1fr 3fr/ 1fr 1fr;
+
+    }
+    .logo{
+        width: 70px;
+        height: 24px !important;
+    }
+    .header *:not([class^='nav-list']):not(.hamburger-item) {
         height: 40px;
         text-align: center;
         line-height: 40px;
         font-size: 1.75rem;
     }
+    .titre-principale {
+        grid-area: 2 / 1 / 2 / -1;
+    }
 
     .hamburger-list{
-        grid-area: 1 / 2 / 2 / -1;
+        grid-area: 2 / 2 / 3 / -1;
+        justify-self: flex-end;
         width: 40px;
         cursor: pointer;
     }
@@ -65,10 +77,11 @@
     }
 
     .hamburger-item{
-        width: 39px;
+        width: 40px;
         height: 6px;
         background: var(--primary-white-color);
         border-radius: 40px;
+        top: 45%;
     }
 
     .hamburger-item-disable:not(:last-child){
@@ -77,13 +90,23 @@
     .nav-list{
         display: none;
     }
+    .nav-list-enable{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        grid-area: 3 / 1 / -1 / -1;
+        justify-content: space-around;
+        align-items: center;
+    }
+
     .hamburger-list-enable{
-        width: 40px;
         position: relative;
     }
     .hamburger-item-enable{
         position: absolute;
         transform-origin: 50%;
+        width: 50px;
     }
     
     .hamburger-item-enable:first-child {
@@ -92,17 +115,15 @@
     }
     
     .hamburger-item-enable:nth-child(2){
-        top: 20px;
-        right: 0;
+        transform: translateY(-50%);
+        right: -12%;
         transform: rotate(-45deg);
-        background-color: blue;
     }
 
     .hamburger-item-enable:last-of-type {
-        top: 50%; 
-        left: 0;
+        transform: translateY(-50%);
+        left: -12%;
         transform: rotate(45deg);
-        background-color: red;
     }
 
 }
