@@ -27,6 +27,10 @@ $router->map('GET','/produit', function() {
 $router->map('GET','/panier', function() {
     include('model/controller/panier.php');
 });
+// Definition espace perso route
+$router->map('GET','/espace_perso', function() {
+    include('model/controller/espacePerso.php');
+});
 
 
 
