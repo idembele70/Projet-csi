@@ -1,3 +1,4 @@
 <?php
 
-echo 'product'
+echo 'product';
+

@@ -4,28 +4,30 @@
 require('config/dbConfig.php'); 
 require('vendor/autoload.php');
 
+
 // Instanciation of the object AltoRouter
 $router = new AltoRouter();
-$router->setBasePath('/projetCommunPlayduh/projetPlayduh/');
+$router->setBasePath('/projetCommunPlayduh/projetPlayduh');
 
 
-// Route's definition 
+// Route's definition
 // Definition default route
 $router->map('GET','/', function() {
-    include('model/controller/404.php');
+    include('model/controller/homepage.php');
+}); 
+// Definition contact route
+$router->map('GET','/contact', function() {
+    include('model/controller/contact.php');
 });
-// Character's route
-// $router->map('GET|POST','/characters', function() {
-//     if ($_SERVER["REQUEST_METHOD"] === 'GET') {
-//         include('model/controller/getDatas.php');
-//         $idVillage = (int) ($_GET['idVillage'] ?? 0);
-//         $search = (string) strtolower((($_GET['search']) ?? ""));
-//         getCharacters(0,$idVillage,$search);
-//     } else {
-//         require('model/controller/addDatas.php');
-//         addDatas('characters');
-//     };
-// });
+// Definition product route
+$router->map('GET','/produit', function() {
+    include('model/controller/product.php');
+});
+// Definition panier route
+$router->map('GET','/panier', function() {
+    include('model/controller/panier.php');
+});
+
 
 
 // Match the route
@@ -36,5 +38,5 @@ $match = $router->match();
 if ($match) {
     call_user_func_array($match['target'],$match['params']);
 } else {
-    echo '404';
+    include('model/controller/404.php');
 }

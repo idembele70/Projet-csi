@@ -1,3 +1,3 @@
 <?php
 
-echo 'panier'
+echo 'panier';
