@@ -1,8 +1,9 @@
-@import 'header.css';
+@import 'header-deconnecte.css';
 
 :root{
     --primary-white-color: #FFFFFF;
     --primary-dark-color: #696969;
+    --primary-orange-color: #ec8521;
 }
 
 body {

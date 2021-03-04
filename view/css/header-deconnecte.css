@@ -1,7 +1,7 @@
 .header{
     display: flex;
     align-items: center;
-    background: var(--primary-dark-color);
+    background: var(--primary-orange-color);
     padding: 0 20px;
 } 
 .header-disable{
@@ -15,7 +15,7 @@
     font-size: 1.75rem;
 }
 .header-enable {
-    height: 320px
+    height: 250px
 }
 .logo{
     width: 150px;
@@ -28,8 +28,7 @@
 }
 .nav-item {
     width: 222px;
-    color: #000000;
-    background: var(--primary-white-color);
+    color: var(--primary-white-color);
     text-decoration: none;
 }
 
@@ -89,8 +88,11 @@
     }
     .nav-list{
         display: none;
+        opacity: 0;
+        /* animation: opacityout 1s ease-in; */
     }
     .nav-list-enable{
+        opacity: 1;
         display: flex;
         height: 100%;
         width: 100%;
@@ -98,6 +100,7 @@
         grid-area: 3 / 1 / -1 / -1;
         justify-content: space-around;
         align-items: center;
+        animation: opacityin 1s ease-in;
     }
 
     .hamburger-list-enable{
@@ -126,4 +129,30 @@
         transform: rotate(45deg);
     }
 
+}
+
+@keyframes opacityin {
+    from{
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes opacityout {
+    from{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+
+    }
+    to{
+        opacity: 0;
+    }
 }
