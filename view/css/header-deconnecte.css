@@ -31,6 +31,54 @@
     color: var(--primary-white-color);
     text-decoration: none;
 }
+.inscription-disable{
+    /* display: none; */
+    
+}
+
+.inscription-enable{
+    width: 100vw;
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d4781e;
+    position: fixed;
+    top: 118px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.inscription-title{
+    text-align: center;
+    margin-top: 0;
+}
+
+.form-inscription{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.form-input{
+width: 235px;
+height: 30px;
+border-radius: 0;
+outline: hidden;
+}
+.form-input:not(:last-child){
+    margin-bottom: 30px;
+}
+
+/* larger screen */
+@media screen and (min-width:1440px){
+    .inscription-enable{
+        top: 118px;
+        left: 50%;
+        width: 1440px;
+        transform: translate(-50%);
+    }
+}
 
 @media screen and (max-width:800px){
     .header {

@@ -1,7 +1,10 @@
+// Selecteur
+
 const hamburgerList = document.querySelector('.hamburger-list');
 const hamburgerItem = document.querySelectorAll('.hamburger-item-disable');
 const header = document.querySelector('.header');
 const navList = document.querySelector('.nav-list');
+const inscriptionBtn = document.getElementById('btnInscription');
 
 hamburgerList.addEventListener('click',()=>{
     // navbar
@@ -41,4 +44,8 @@ if (hamburgerList.classList.contains('hamburger-list-disable')) {
     navList.classList.add('nav-list');
    
 }
-},false)
+},false);
+
+inscriptionBtn.onclick = ()=>{
+    console.log('ok');
+}

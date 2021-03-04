@@ -16,10 +16,20 @@
         <span class="hamburger-item hamburger-item-disable"></span>
     </span>
         <nav class="nav-list">
-            <a class="nav-item" href="#">Connexion</a>
-            <a class="nav-item" href="#">Crée un compte</a>
+            <a class="nav-item" id="btnConnexion" href="#">Connexion</a>
+            <a class="nav-item" id="btnInscription" href="#">Crée un compte</a>
         </nav>
     </header>
+    <div class="inscription-disable">
+        <h1 class="inscription-title">Crée un compte</h1>
+        <form action="inscription.php" method="post" class="form-inscription">
+            <input class="form-input" type="text" placeholder="Nom">
+            <input class="form-input" type="text" placeholder="E-mail">
+            <input class="form-input" type="text" placeholder="Mot de passe">
+            <input class="form-input" type="text" placeholder="Adresse de facturation">
+        </form>
+    </div>
+
 <script src="/view/js/main.js"></script>
 </body>
 </html>
