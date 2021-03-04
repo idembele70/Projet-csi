@@ -1,4 +1,5 @@
 <?php
 
-echo 'product';
-
+// Code PHP
+include('function/renderProduct.php');
+renderProduct($idProduct ?? 2);
