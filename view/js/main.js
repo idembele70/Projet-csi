@@ -1,10 +1,12 @@
+// Selecteur
 const hamburgerList = document.querySelector('.hamburger-list');
 const hamburgerItem = document.querySelectorAll('.hamburger-item-disable');
 const header = document.querySelector('.header');
 const navList = document.querySelector('.nav-list');
 
+// evenements du navbar
 hamburgerList.addEventListener('click',()=>{
-    // navbar
+    
 if (hamburgerList.classList.contains('hamburger-list-disable')) {
     
     //header
@@ -19,11 +21,10 @@ if (hamburgerList.classList.contains('hamburger-list-disable')) {
         element.classList.add('hamburger-item-enable');
         
     });
-    // afficher 
     // navList.classList.remove('nav-list');
     navList.classList.remove('nav-list');
     navList.classList.add('nav-list-enable');
-    //Desactiver navbar
+
 } else {
     // mettre le header a disable
     header.classList.remove('header-enable');
@@ -36,9 +37,11 @@ if (hamburgerList.classList.contains('hamburger-list-disable')) {
         element.classList.remove('hamburger-item-enable');
         element.classList.add('hamburger-item-disable');
     })
-    // cache navlist
+    // cacher navlist
     navList.classList.remove('nav-list-enable');
     navList.classList.add('nav-list');
    
 }
-},false)
+},false);
+
+// evenement des buttons du navbar
