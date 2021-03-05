@@ -8,8 +8,9 @@ include('header.php');
 // Code PHP
 include('function/renderPerso.php');
 include('function/renderCommand.php');
-renderPerso($idPerso ?? 1);
-renderCommand($idPerso ?? 1);
+// IF SESSION EXISTS
+renderPerso($_SESSION['id'] ?? 1);
+renderCommand($_SESSION['id'] ?? 1);
 
 
 // Include footer

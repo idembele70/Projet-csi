@@ -5,7 +5,7 @@ function renderCommand(int $persoAct) {
     global $conn;
     $viewCommand = (string) '';
 
-    $query = (string) "SELECT com.idCommande, com.ref, com.dateCreation, pro.nom FROM commande as com INNER JOIN contenir as con ON com.idCommande = con.idCommande INNER JOIN produit as pro ON pro.idProduit = con.idProduit WHERE com.idClient = 1";
+    $query = (string) "SELECT com.idCommande, com.ref, com.dateCreation, pro.nom FROM commande as com INNER JOIN contenir as con ON com.idCommande = con.idCommande INNER JOIN produit as pro ON pro.idProduit = con.idProduit WHERE com.idClient = $persoAct";
 
     try {
         $result = mysqli_query($conn, $query);
