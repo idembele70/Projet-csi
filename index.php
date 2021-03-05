@@ -22,7 +22,7 @@ $router->map('GET','/contact', function() {
 });
 // Definition product route
 $router->map('GET','/produit', function() {
-    include('model/controller/produit.php');
+    include('model/controller/product.php');
 });
 // Definition panier route
 $router->map('GET','/panier', function() {
