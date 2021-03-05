@@ -39,12 +39,43 @@
 	    }
 	}
 
-	// Vérification des identifiants lors de la connexion
-	function verifClient($adresseMail, $motDePasse) { //En paramètre les données récupérées du formulaire de connexion
+	// Connexion client
+	function verifClient($id, $adresseMail, $motDePasse) { //En paramètre les données récupérées du formulaire de connexion
 		try{
 			$con = getDatabaseConnexion();
 			$motDePasse =  hash("sha256", $this->motDePasse);
-			$requete = "SELECT * from utilisateurs where adresseMail = '$adresseMail' and motDePasse = '$motDePasse'";		
+			$requete = "SELECT * from utilisateurs where adresseMail = '$adresseMail' and motDePasse = '$motDePasse' and id = '$id'";
+			$requete1 = "UPDATE client set 
+						isConnected = 1,
+						where id = '$id' ";
+			$stmt = $con->query($requete1);
+
+			//Démarrage de la session utilisateur
+			session_start();
+			$_SESSION['id'] = $id;
+			$_SESSION['mail'] = $adresseMail;
+			$_SESSION['mdp'] = $motDePasse;
+		}
+		catch(PDOException $e) {
+	    	echo $sql . "<br>" . $e->getMessage();
+	    }
+
+	}
+
+	// Déconnexion client
+	function verifClient($id) {
+		try{
+			$con = getDatabaseConnexion();
+			$requete = "UPDATE client set 
+						isConnected = 0,
+						where id = '$id' ";
+			$stmt = $con->query($requete);
+
+			//Fermeture de la session et des variables qui lui sont associées
+			session_destroy();
+			unset($_SESSION['id']);
+			unset($_SESSION['mail']);
+			unset($_SESSION['mdp']);
 		}
 		catch(PDOException $e) {
 	    	echo $sql . "<br>" . $e->getMessage();

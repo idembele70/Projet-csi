@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `motDePasse` VARCHAR(45) DEFAULT NULL,
   `adresseLivraison` varchar(255) DEFAULT NULL,
   `adresseFacturation` varchar(255) DEFAULT NULL,
+  `isConnected` boolean DEFAULT 0,
   `token` VARCHAR(25) DEFAULT NULL,
   PRIMARY KEY (`idClient`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
