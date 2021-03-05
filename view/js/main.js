@@ -4,7 +4,12 @@ const hamburgerList = document.querySelector('.hamburger-list');
 const hamburgerItem = document.querySelectorAll('.hamburger-item-disable');
 const header = document.querySelector('.header');
 const navList = document.querySelector('.nav-list');
-const inscriptionBtn = document.getElementById('btnInscription');
+const btnInscription = document.getElementById('btnInscription');
+const btnConnexion = document.getElementById('btnConnexion');
+const DivInscription = document.querySelector('.register');
+const DivConnexion = document.querySelector('.login');
+let btnCloseLogin = document.querySelector('.close-login');
+let btnCloseRegister = document.querySelector('.close-register');
 
 hamburgerList.addEventListener('click',()=>{
     // navbar
@@ -45,7 +50,32 @@ if (hamburgerList.classList.contains('hamburger-list-disable')) {
    
 }
 },false);
+// ouvrir la div inscription
+btnInscription.onclick = ()=>{
+   if (DivInscription.classList.contains('inscription-disable'))
+       DivInscription.classList.remove('inscription-disable');
+       DivInscription.classList.add('inscription-enable');
+       DivConnexion.classList.remove('connexion-enable');
+       DivConnexion.classList.add('connexion-disable');
 
-inscriptionBtn.onclick = ()=>{
-    console.log('ok');
 }
+// div connexion
+// close inscription & connexion
+btnConnexion.onclick = ()=>{
+    if (DivConnexion.classList.contains('connexion-disable'))
+        DivConnexion.classList.remove('connexion-disable');
+        DivConnexion.classList.add('connexion-enable');
+        DivInscription.classList.remove('inscription-enable');
+        DivInscription.classList.add('inscription-disable');
+    }
+    
+    
+    btnCloseLogin.onclick = btnCloseRegister.onclick = ()=> {
+        if (DivInscription.classList.contains('inscription-enable')) {
+            DivInscription.classList.remove('inscription-enable');
+            DivInscription.classList.add('inscription-disable');
+        } else {
+            DivConnexion.classList.remove('connexion-enable');
+            DivConnexion.classList.add('connexion-disable');
+        }
+    };
