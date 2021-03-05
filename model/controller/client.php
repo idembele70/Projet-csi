@@ -10,6 +10,9 @@
   		$faker->address;
 	}
 
+// Faire des tests sur la connexion / déconnexion /!\
+ 
+
 	// Commexion à la BDD
 	function getDatabaseConnexion() {
 		try {
@@ -87,7 +90,6 @@
 	function updateClient($adresseMail) {
 		try {
 			$con = getDatabaseConnexion();
-			$motDePasse =  hash("sha256", $this->motDePasse);
 			$requete = "UPDATE client set 
 						adresseMail = '$adresseMail',
 						where id = '$id' ";
@@ -99,11 +101,13 @@
 	}
 
 	// Vide le champ mot de passe pour être remplacé
+	// Lors de l'envoi d'un mail, le mail doit contenir un en-tête From --> additional_params dans le php.ini pour ne pas avoir d'erreurs 
+	// Voir PHPMailer
 	function updateMotDePasse($adresseMail, $motDePasse, $token){
 		try{
-			$token = bin2hex(random_bytes(12))
+			$token = bin2hex(random_bytes(12));
 			$con = getDatabaseConnexion();
-			$motDePasse =  hash("sha256", $this->motDePasse)
+			$motDePasse =  hash("sha256", $this->motDePasse);
 			$message= "<table style='border-radius:15px; border: 3px solid #6247c2; text-align:center; padding:20px; font-family:roboto; background-color:#ecf3e5'>";
 	        $message.= "<tr>";
 	        $message.= "<td><img src='logo.png' alt='logo-playduh' style='width:50px'></td>";
@@ -120,7 +124,7 @@
 
 			$requete = "UPDATE client set
 						motDePasse = '',
-						token = '$token'"
+						token = '$token'";
 			mail($adresseMail, 'Réinitialisation du mot de passe', $message);
 
 		}catch(PDOException $e){
