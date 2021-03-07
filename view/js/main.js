@@ -19,7 +19,7 @@ if (hamburgerList.classList.contains('hamburger-list-disable')) {
     header.classList.remove('header-disable');
     header.classList.add('header-enable');
 
-    // nav
+    // activer hamburger list
     hamburgerList.classList.remove('hamburger-list-disable');
     hamburgerList.classList.add('hamburger-list-enable');
     hamburgerItem.forEach((element)=>{
@@ -57,7 +57,7 @@ btnInscription.onclick = ()=>{
        DivInscription.classList.add('inscription-enable');
        DivConnexion.classList.remove('connexion-enable');
        DivConnexion.classList.add('connexion-disable');
-
+       changeHamburgerState();
 }
 // div connexion
 // close inscription & connexion
@@ -67,6 +67,7 @@ btnConnexion.onclick = ()=>{
         DivConnexion.classList.add('connexion-enable');
         DivInscription.classList.remove('inscription-enable');
         DivInscription.classList.add('inscription-disable');
+        changeHamburgerState()
     }
     
     
@@ -74,8 +75,27 @@ btnConnexion.onclick = ()=>{
         if (DivInscription.classList.contains('inscription-enable')) {
             DivInscription.classList.remove('inscription-enable');
             DivInscription.classList.add('inscription-disable');
+            changeHamburgerState()
         } else {
             DivConnexion.classList.remove('connexion-enable');
             DivConnexion.classList.add('connexion-disable');
+            changeHamburgerState()
         }
     };
+
+    // function
+    function changeHamburgerState() {
+        if (!hamburgerList.classList.contains('hamburger-list-enable')) {
+            // activer hamburger list
+            hamburgerList.classList.add('hamburger-list-enable');
+            hamburgerItem.forEach((element)=>{
+                element.classList.add('hamburger-item-enable');
+            })
+        } else {
+        //desactiver
+        hamburgerList.classList.remove('hamburger-list-enable');
+        hamburgerItem.forEach((element)=>{
+            element.classList.remove('hamburger-item-enable');
+        })
+        }
+    }

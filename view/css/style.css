@@ -4,11 +4,14 @@
     --primary-white-color: #FFFFFF;
     --primary-dark-color: #696969;
     --primary-orange-color: #ec8521;
+    --primary-darken-orange-color: #d4781e;
 }
 
 body {
     max-width: 1440px;
     margin: 0 auto;
     min-width: 320px;
+}
+*{
     font-family: 'Josefin Sans';
 }
