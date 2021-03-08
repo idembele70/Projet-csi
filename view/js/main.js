@@ -10,7 +10,7 @@ const DivInscription = document.querySelector('.register');
 const DivConnexion = document.querySelector('.login');
 let btnCloseLogin = document.querySelector('.close-login');
 let btnCloseRegister = document.querySelector('.close-register');
-
+const bgLog = document.querySelector('.bg-log');
 hamburgerList.addEventListener('click',()=>{
     // navbar
 if (hamburgerList.classList.contains('hamburger-list-disable')) {
@@ -58,6 +58,8 @@ btnInscription.onclick = ()=>{
        DivConnexion.classList.remove('connexion-enable');
        DivConnexion.classList.add('connexion-disable');
        changeHamburgerState();
+       bgLog.classList.remove('bg-log-disable')
+       bgLog.classList.add('bg-log-enable');
 }
 // div connexion
 // close inscription & connexion
@@ -67,7 +69,9 @@ btnConnexion.onclick = ()=>{
         DivConnexion.classList.add('connexion-enable');
         DivInscription.classList.remove('inscription-enable');
         DivInscription.classList.add('inscription-disable');
-        changeHamburgerState()
+        changeHamburgerState();
+        bgLog.classList.remove('bg-log-disable')
+        bgLog.classList.add('bg-log-enable');
     }
     
     
@@ -75,11 +79,15 @@ btnConnexion.onclick = ()=>{
         if (DivInscription.classList.contains('inscription-enable')) {
             DivInscription.classList.remove('inscription-enable');
             DivInscription.classList.add('inscription-disable');
-            changeHamburgerState()
+            changeHamburgerState();
+            bgLog.classList.remove('bg-log-enable')
+            bgLog.classList.add('bg-log-disable');
         } else {
             DivConnexion.classList.remove('connexion-enable');
             DivConnexion.classList.add('connexion-disable');
-            changeHamburgerState()
+            changeHamburgerState();
+            bgLog.classList.remove('bg-log-enable')
+            bgLog.classList.add('bg-log-disable');
         }
     };
 

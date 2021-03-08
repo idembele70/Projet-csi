@@ -1,4 +1,5 @@
-@import 'header-deconnecte.css';
+@import 'header.css';
+@import 'keyframe.css';
 
 :root{
     --primary-white-color: #FFFFFF;
@@ -8,7 +9,6 @@
 }
 
 body {
-    max-width: 1440px;
     margin: 0 auto;
     min-width: 320px;
 }
