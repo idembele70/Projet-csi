@@ -1,5 +1,4 @@
 // Selecteur
-
 const hamburgerList = document.querySelector('.hamburger-list');
 const hamburgerItem = document.querySelectorAll('.hamburger-item-disable');
 const header = document.querySelector('.header');
@@ -60,6 +59,7 @@ btnInscription.onclick = ()=>{
        changeHamburgerState();
        bgLog.classList.remove('bg-log-disable')
        bgLog.classList.add('bg-log-enable');
+       bgLog.removeAttribute('style');
 }
 // div connexion
 // close inscription & connexion
@@ -72,22 +72,24 @@ btnConnexion.onclick = ()=>{
         changeHamburgerState();
         bgLog.classList.remove('bg-log-disable')
         bgLog.classList.add('bg-log-enable');
+        bgLog.removeAttribute('style');
     }
-    
-    
+    // Close connexion inscription
     btnCloseLogin.onclick = btnCloseRegister.onclick = ()=> {
         if (DivInscription.classList.contains('inscription-enable')) {
             DivInscription.classList.remove('inscription-enable');
             DivInscription.classList.add('inscription-disable');
             changeHamburgerState();
-            bgLog.classList.remove('bg-log-enable')
+            bgLog.classList.remove('bg-log-enable');
             bgLog.classList.add('bg-log-disable');
+            bgLog.style.animation = "bottomToTop .2s";
         } else {
             DivConnexion.classList.remove('connexion-enable');
             DivConnexion.classList.add('connexion-disable');
             changeHamburgerState();
-            bgLog.classList.remove('bg-log-enable')
+            bgLog.classList.remove('bg-log-enable');
             bgLog.classList.add('bg-log-disable');
+            bgLog.style.animation = "bottomToTop .2s";
         }
     };
 

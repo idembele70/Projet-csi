@@ -1,11 +1,26 @@
 .inscription-disable, .connexion-disable{
-    animation: 100ms opacityout;
+    animation: 1000ms opacityout;
     display: none;
 }
-.bg-log-enable{
-    width: 100vw;
-    height: 100vh;
+
+.bg-log{
+    position: fixed;
+    top: 118px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background: var(--primary-darken-orange-color);
+    height: 100vh;
+    width: 100vw;
+
+}
+.bg-log-disable{
+    height: 0;  
+}
+
+.bg-log-enable{
+    opacity: 1;
+    color: var(--primary-white-color);
    animation: heightTopToBottom 500ms;
 }
 .inscription-enable, .connexion-enable {
@@ -17,20 +32,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-size: cover;
-    position: fixed;
-    top: 118px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: var(--primary-white-color);
     animation: opacityin 650ms;
 }
 
 .inscription-title, .connexion-title{
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 6.25rem;
+    margin: 6.25rem 0;
 }
 
 .form-inscription, .form-connexion{
@@ -71,10 +78,11 @@ border: none;
 
 /* larger */
 
-
 @media screen and (max-width:800px){
     .inscription-enable, .connexion-enable {
         top: 70px;
     }
-
+    .bg-log{
+    top: 70px;
+    }
 }

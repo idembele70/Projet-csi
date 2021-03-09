@@ -1,5 +1,5 @@
 <?php
-
+/* 
 // Gestion of the files
 require('config/dbConfig.php'); 
 require('vendor/autoload.php');
@@ -40,3 +40,6 @@ if ($match) {
 } else {
     include('model/controller/404.php');
 }
+ */
+
+ include './model/controller/header-deconnecte.php';
