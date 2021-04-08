@@ -26,11 +26,11 @@ $router->map('GET','/produit', function() {
 });
 // Definition panier route
 $router->map('GET','/panier', function() {
-    include('view/controller/panier.php');
+    include('view/panier.php');
 });
 // Definition espace perso route
 $router->map('GET','/espace_perso', function() {
-    include('view/controller/espacePerso.php');
+    include('view/espacePerso.php');
 });
 
 
