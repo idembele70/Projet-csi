@@ -14,23 +14,23 @@ $router->setBasePath('/projetCommunPlayduh/projetPlayduh');
 // Route's definition
 // Definition default route
 $router->map('GET','/', function() {
-    include('model/controller/homepage.php');
+    include('view/homepage.php');
 }); 
 // Definition contact route
 $router->map('GET','/contact', function() {
-    include('model/controller/contact.php');
+    include('view/contact.php');
 });
 // Definition product route
 $router->map('GET','/produit', function() {
-    include('model/controller/product.php');
+    include('view/product.php');
 });
 // Definition panier route
 $router->map('GET','/panier', function() {
-    include('model/controller/panier.php');
+    include('view/controller/panier.php');
 });
 // Definition espace perso route
 $router->map('GET','/espace_perso', function() {
-    include('model/controller/espacePerso.php');
+    include('view/controller/espacePerso.php');
 });
 
 
@@ -43,5 +43,5 @@ $match = $router->match();
 if ($match) {
     call_user_func_array($match['target'],$match['params']);
 } else {
-    include('model/controller/404.php');
+    include('view/404.php');
 }
