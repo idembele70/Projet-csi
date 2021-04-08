@@ -9,8 +9,11 @@
   		$faker->firstName;
   		$faker->address;
 	}
-
 	// Connexion à la BDD
+// Faire des tests sur la connexion / déconnexion /!\
+ 
+
+	// Commexion à la BDD
 	function getDatabaseConnexion() {
 		try {
 		    $user = "root";
@@ -42,8 +45,8 @@
 	    }
 	}
 
-	// Vérification des identifiants lors de la connexion
-	function verifClient($adresseMail, $motDePasse) { //En paramètre les données récupérées du formulaire de connexion
+	// Connexion client
+	function verifClient($id, $adresseMail, $motDePasse) { //En paramètre les données récupérées du formulaire de connexion
 		try{
 			$con = getDatabaseConnexion();
 			$motDePasse =  hash("sha256", $this->motDePasse);
@@ -58,11 +61,31 @@
 
 	}
 
+	// Déconnexion client
+	function verifClient($id) {
+		try{
+			$con = getDatabaseConnexion();
+			$requete = "UPDATE client set 
+						isConnected = 0,
+						where id = '$id' ";
+			$stmt = $con->query($requete);
+
+			//Fermeture de la session et des variables qui lui sont associées
+			session_destroy();
+			unset($_SESSION['id']);
+			unset($_SESSION['mail']);
+			unset($_SESSION['mdp']);
+		}
+		catch(PDOException $e) {
+	    	echo $sql . "<br>" . $e->getMessage();
+	    }
+
+	}
+
 	// Mise à jour des infos du client (email)
 	function updateClient($adresseMail) {
 		try {
 			$con = getDatabaseConnexion();
-			$motDePasse =  hash("sha256", $this->motDePasse);
 			$requete = "UPDATE client set 
 						adresseMail = '$adresseMail',
 						where id = '$id' ";
@@ -74,11 +97,13 @@
 	}
 
 	// Vide le champ mot de passe pour être remplacé
+	// Lors de l'envoi d'un mail, le mail doit contenir un en-tête From --> additional_params dans le php.ini pour ne pas avoir d'erreurs 
+	// Voir PHPMailer
 	function updateMotDePasse($adresseMail, $motDePasse, $token){
 		try{
-			$token = bin2hex(random_bytes(12))
+			$token = bin2hex(random_bytes(12));
 			$con = getDatabaseConnexion();
-			$motDePasse =  hash("sha256", $this->motDePasse)
+			$motDePasse =  hash("sha256", $this->motDePasse);
 			$message= "<table style='border-radius:15px; border: 3px solid #6247c2; text-align:center; padding:20px; font-family:roboto; background-color:#ecf3e5'>";
 	        $message.= "<tr>";
 	        $message.= "<td><img src='logo.png' alt='logo-playduh' style='width:50px'></td>";
@@ -97,7 +122,6 @@
 						motDePasse = '',
 						token = '$token'"
 			$stmt = $con->query($requete);
-			
 			mail($adresseMail, 'Réinitialisation du mot de passe', $message);
 
 		}catch(PDOException $e){
