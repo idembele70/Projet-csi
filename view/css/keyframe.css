@@ -1,0 +1,43 @@
+@keyframes opacityin {
+    from{
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes opacityout {
+    from{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes heightTopToBottom {
+    from{
+        height: 0;
+    }
+    to {
+        height: 100vh;
+    }
+}
+
+@keyframes bottomToTop {
+    0%{
+        height:100vh;
+    }
+    
+    100% {
+        height: 0;
+    }
+}

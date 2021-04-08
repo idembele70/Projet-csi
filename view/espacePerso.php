@@ -2,7 +2,7 @@
 
 
 // Include header
-include('header.php');
+include('view/header-deconnecte.php');
 
 
 // Code PHP
@@ -14,4 +14,4 @@ renderCommand($_SESSION['id'] ?? 1);
 
 
 // Include footer
-include('footer.php');
+include('view/footer.php');

@@ -19,6 +19,10 @@ class ComposerStaticInit3417c4875a17d355dacd257145abf873
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
+        'F' => 
+        array (
+            'Faker\\' => 6,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -33,6 +37,10 @@ class ComposerStaticInit3417c4875a17d355dacd257145abf873
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
     );
 

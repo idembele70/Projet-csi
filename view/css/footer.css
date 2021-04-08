@@ -1,0 +1,48 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background:var(--secondary-dark-color);
+    color: var(--primary-white-color);
+    min-width: 320px;
+}
+.contenu-footer {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.bloc {
+    width: 25%;
+}
+.footer-contact h3 a {
+    text-decoration: none;
+    color: white;
+
+}
+[class*='footer-'] h3{
+    padding-bottom: 5px;
+    text-align: center;
+    color: white;
+    
+}
+
+
+
+/* Media queries */
+
+@media screen and (max-width: 800px) {
+
+    .contenu-footer {
+        width: 320px;
+        flex-direction: column;
+        
+    }
+    .bloc {
+        width: 100%;
+    }
+   
+}
