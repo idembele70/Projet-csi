@@ -10,7 +10,7 @@
   		$faker->address;
 	}
 
-	// Commexion à la BDD
+	// Connexion à la BDD
 	function getDatabaseConnexion() {
 		try {
 		    $user = "root";
@@ -33,6 +33,9 @@
 			$sql = "INSERT INTO client (nom, prenom, adresseMail, motDePasse, adresseLivraison, adresseFacturation) 
 					VALUES ('$nom', '$prenom', '$adresseMail', '$motDePasse', '$adresseLivraison', '$adresseFacturation')";
 	    	$con->exec($sql);
+	    	session_start();
+			$_SESSION['mail'] = $adresseMail;
+			$_SESSION['mdp'] = $motDePasse
 		}
 	    catch(PDOException $e) {
 	    	echo $sql . "<br>" . $e->getMessage();
@@ -44,7 +47,10 @@
 		try{
 			$con = getDatabaseConnexion();
 			$motDePasse =  hash("sha256", $this->motDePasse);
-			$requete = "SELECT * from utilisateurs where adresseMail = '$adresseMail' and motDePasse = '$motDePasse'";		
+			$requete = "SELECT * from utilisateurs where adresseMail = '$adresseMail' and motDePasse = '$motDePasse'";
+			session_start();
+			$_SESSION['mail'] = $adresseMail;
+			$_SESSION['mdp'] = $motDePasse
 		}
 		catch(PDOException $e) {
 	    	echo $sql . "<br>" . $e->getMessage();
@@ -90,6 +96,8 @@
 			$requete = "UPDATE client set
 						motDePasse = '',
 						token = '$token'"
+			$stmt = $con->query($requete);
+			
 			mail($adresseMail, 'Réinitialisation du mot de passe', $message);
 
 		}catch(PDOException $e){
