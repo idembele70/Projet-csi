@@ -5,4 +5,4 @@ RewriteRule ^contact/?$ index.php [NC,L]
 RewriteRule ^panier/?$ index.php [NC,L]
 RewriteRule ^espace_perso/?$ index.php [NC,L]
 
-RewriteRule ^[^/]+/(\d+)$ index.php
+RewriteRule ^(.*)$ index.php

@@ -8,7 +8,7 @@
             </span>
             <nav class="nav-list">
                 <a class="nav-item" id="btnConnexion" href="#">Connexion</a>
-                <a class="nav-item" id="btnInscription" href="#">Crée un compte</a>
+                <a class="nav-item" id="btnInscription" href="#">Créer un compte</a>
             </nav>
         </div>
     </header>
