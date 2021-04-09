@@ -142,6 +142,10 @@ logo.onclick = function () { location.href = '/projet-csi/'; }
 
 // Product.js
 
+
 if (!!ContainerProduit) {
-    console.log("it's true");
+    const bodyheight = (window.innerHeight);
+    console.log(bodyheight + '\n');
+    console.log(footer.clientHeight);
+
 }
