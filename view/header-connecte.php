@@ -6,7 +6,8 @@
     </span>
     <nav class="nav-list">
         <a class="nav-item" href="#profil.php">Profil</a>
-        <a class="nav-item" href="views/_logout.php">Déconnexion</a>
         <a class="nav-item" href="#panier.php">Panier</a>
+        <a class="nav-item" href="#panier.php">Contact</a>
+        <a class="nav-item" href="views/_logout.php">Déconnexion</a>
     </nav>
 </header>

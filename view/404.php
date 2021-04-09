@@ -21,7 +21,7 @@
     <div class="e404">
         <h2 class="e404-title">404</h2>
         <p>page non trouvé</p>
-        <a href="/projetPlayduh/">Retour à l'accueil</a>
+        <a href="/Projet-csi/accueil">Retour à l'accueil</a>
     </div>
     
     <?php
