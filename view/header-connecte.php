@@ -5,9 +5,9 @@
         <span class="hamburger-item hamburger-item-disable"></span>
     </span>
     <nav class="nav-list">
-        <a class="nav-item" href="#profil.php">Profil</a>
-        <a class="nav-item" href="#panier.php">Panier</a>
-        <a class="nav-item" href="#panier.php">Contact</a>
-        <a class="nav-item" href="views/_logout.php">Déconnexion</a>
+        <a class="nav-item" href="./espace_perso">Profil</a>
+        <a class="nav-item" href="./panier">Panier</a>
+        <a class="nav-item" href="./contact">Contact</a>
+        <a class="nav-item" href="./model/logout.php">Déconnexion</a>
     </nav>
 </header>

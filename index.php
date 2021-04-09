@@ -1,5 +1,7 @@
 <?php
 
+// Start the session
+session_start();
 // Gestion of the files
 require('config/dbConfig.php'); 
 require('vendor/autoload.php');
@@ -13,7 +15,7 @@ $router->setBasePath('/Projet-csi');
 
 // Route's definition
 // Definition default route
-$router->map('GET','/accueil', function() {
+$router->map('GET','/', function() {
     include('view/homepage.php');
 }); 
 // Definition contact route

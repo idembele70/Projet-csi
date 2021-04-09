@@ -7,8 +7,8 @@
                 <span class="hamburger-item hamburger-item-disable"></span>
             </span>
             <nav class="nav-list">
-                <a class="nav-item" id="btnConnexion" href="#">Connexion</a>
-                <a class="nav-item" id="btnInscription" href="#">Créer un compte</a>
+                <a class="nav-item" id="btnConnexion">Connexion</a>
+                <a class="nav-item" id="btnInscription">Créer un compte</a>
             </nav>
         </div>
     </header>
@@ -27,7 +27,7 @@
         <div class="login connexion-disable">
             <img src="view/assets/img/times-solid.svg" class="close-login" alt="croix fermante">
             <h1 class="connexion-title">Connexion</h1>
-            <form action="" class="form-connexion" method="post">
+            <form action="model/login.php" class="form-connexion" method="post">
                 <input class="form-input" type="text" name="username" placeholder="E-mail">
                 <input class="form-input" type="text" name="password" placeholder="Mot de passe">
                 <button class="valider-connexion" type="submit">Connexion</button>

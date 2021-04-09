@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -15,8 +15,14 @@
 <body>
 
     <?php
-    // include './model/controller/_login.php';
-    include 'header-deconnecte.php';
+    // Include header
+    if(isset($_SESSION['connected']) == true) {
+        include('view/header-connecte.php');
+    } else {
+        include('view/header-deconnecte.php');
+    }
+
+
     echo 'product';
     // Code PHP
     include('function/renderProduct.php');
@@ -33,6 +39,7 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
         </div>
     </div>
+    
     <?php
     include('view/footer.php');
     ?>
