@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="view/css/style.css">
+    <link rel="stylesheet" href="view/css/header-deconnecte.css">
+    <link rel="stylesheet" href="view/css/contact.css">
     <script defer src="view/js/main.js"></script>
 </head>
 
@@ -17,9 +19,19 @@
 
 // Include header
 include('view/header-deconnecte.php');
-
-echo 'contact';
-
+?>
+<section class="bg-log contact">
+    <div class="inscription-enable connexion-enable">
+        <h1>Contactez nous</h1>
+        <form action="/contact.php">
+            <input class="form-input" type="text" name="title" placeholder="Text">
+            <input class="form-input" type="text" name="username" placeholder="E-mail">
+            <textarea class="form-textarea" name="message" rows="12" placeholder="Message"></textarea>
+            <input class="valider-connexion" type="submit" value="Submit">
+        </form>
+    </div>
+</section>
+<?php
 // Lors de l'envoi d'un mail, le mail doit contenir un en-tête From --> additional_params dans le php.ini pour ne pas avoir d'erreurs
 // Voir PHPMailer
 function updateMotDePasse($adresseMail, $motDePasse, $token){

@@ -41,20 +41,23 @@
 }
 
 .form-inscription, .form-connexion{
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 45%;
-max-width: 420px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    max-width: 420px;
+    }
 .form-input{
-width: 100%;
-height: 30px;
-border-radius: 0;
-outline: none;
-border: none;
-font-size: 1rem;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    outline: none;
+    border: none;
+    font-size: 1rem;
 }
+
 .form-input:not(:last-child){
     margin-bottom: 30px;
 }

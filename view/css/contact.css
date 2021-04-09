@@ -1,0 +1,28 @@
+.contact h1{
+    color: white;
+}
+
+.contact div{
+    margin-top: 50px;
+}
+
+.form-textarea{
+    width: 100%;
+    border-radius: 0;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+}
+
+.contact .inscription-enable, .connexion-enable{
+    animation: opacityin 0ms;
+}
+
+.contact div form{
+    margin-top: 40px;
+}
+
+.contact div form input.valider-connexion {
+    float: right;
+    margin-top: 20px;
+}
