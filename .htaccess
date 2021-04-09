@@ -4,5 +4,7 @@ RewriteRule ^produit/?$ index.php [NC,L]
 RewriteRule ^contact/?$ index.php [NC,L]
 RewriteRule ^panier/?$ index.php [NC,L]
 RewriteRule ^espace_perso/?$ index.php [NC,L]
+RewriteRule ^accueil/?$ index.php
 
-RewriteRule ^(.*)+$ index.php
+
+#RewriteRule ^[^/]+/(\d+)$ index.php

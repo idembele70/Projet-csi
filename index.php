@@ -13,7 +13,7 @@ $router->setBasePath('/projetPlayduh');
 
 // Route's definition
 // Definition default route
-$router->map('GET','/', function() {
+$router->map('GET','/accueil', function() {
     include('view/homepage.php');
 }); 
 // Definition contact route
