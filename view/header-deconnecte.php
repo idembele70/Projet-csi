@@ -1,7 +1,7 @@
 <body>
     <header>
         <div class="header header-disable">
-            <div class="titre-principale"><img class="logo" src="/Projet-csi/view/assets/img/logo-playduh.png" alt="logo de playduh">
+            <div class="titre-principale"><img class="logo" src="view/assets/img/logo-playduh.png" alt="logo de playduh">
             </div>
             <span class="hamburger-list hamburger-list-disable">
                 <span class="hamburger-item hamburger-item-disable"></span>
@@ -14,8 +14,8 @@
     </header>
     <div class="bg-log bg-log-disable">
         <div class="register inscription-disable">
-            <img src="/Projet-csi/view/assets/img/times-solid.svg" class="close-register" alt="croix fermante">
-            <h1 class="inscription-title">Crée un compte</h1>
+            <img src="view/assets/img/times-solid.svg" class="close-register" alt="croix fermante">
+            <h1 class="inscription-title">Créer un compte</h1>
             <form action="" method="post" class="form-inscription">
                 <input class="form-input" type="text" placeholder="Nom">
                 <input class="form-input" type="text" placeholder="E-mail">
@@ -25,7 +25,7 @@
             </form>
         </div>
         <div class="login connexion-disable">
-            <img src="/Projet-csi/view/assets/img/times-solid.svg" class="close-login" alt="croix fermante">
+            <img src="view/assets/img/times-solid.svg" class="close-login" alt="croix fermante">
             <h1 class="connexion-title">Connexion</h1>
             <form action="" class="form-connexion" method="post">
                 <input class="form-input" type="text" name="username" placeholder="E-mail">
