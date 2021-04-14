@@ -1,10 +1,36 @@
-RewriteEngine On # Activer le module Rewrite
+#le serveur doit suivre les liens symboliques
+#Options +FollowSymlinks
+# Masquer les informations du serveur (quand page forbidden)
+ServerSignature Off
+# Don't see the links/files
+Options All -Indexes
+# Encodage par défaut des fichiers textes et HTML
+AddDefaultCharset UTF-8
+# Activer le module Rewrite
+RewriteEngine On
+# Redirection vers le fichier index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$  index.php [L,QSA]
+# Aucun accès au fichier .htaccess
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
 
-#RewriteRule ^produit/?$ index.php [NC,L]
-#RewriteRule ^contact/?$ index.php [NC,L]
-#RewriteRule ^panier/?$ index.php [NC,L]
-#RewriteRule ^espace_perso/?$ index.php [NC,L]
-#RewriteRule ^/?$ index.php
-#RewriteRule ^404/?$ index.php
 
-RewriteRule ^(\w+)$ index.php
+# A investiguer
+# HTTPS redirection
+# RewriteCond %{HTTPS} off
+# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+# Redirection du site sans www vers www
+# RewriteCond %{HTTPS_HOST} ^playduh.fr [NC]
+# RewriteRule ^(.*)$ https://www.playduh.fr/$1 [L,R=301]
+
+# Protections contre le clickjascking, les attaques XSS et le Sniffing
+<ifModule mod_headers.c>
+Header set X-XSS-Protection "1; mode=block"
+Header always append X-Frame-Options SAMEORIGIN
+Header set X-Content-Type-Options: "nosniff”
+</ifModule>

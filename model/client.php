@@ -40,7 +40,7 @@
 	function verifClient($adresseMail, $motDePasse) { //En paramètre les données récupérées du formulaire de connexion
 		try{
 			$con = getDatabaseConnexion();
-			$adresseMail = (string) htmlspecialchars(strip_tags($adresseMail));
+			$adresseMail = (string) $adresseMail;
 			$motDePasse = (string) hash("sha256", $motDePasse);
 			// Request to send
 			$requete = "SELECT idClient, adresseMail, password from client where adresseMail = '$adresseMail' and `password` = '$motDePasse'";

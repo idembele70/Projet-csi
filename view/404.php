@@ -8,8 +8,8 @@
     <title>Page 404</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="view/css/style.css">
-    <script defer src="view/js/main.js"></script>
+    <link rel="stylesheet" href="http://localhost/Projet-csi/view/css/style.css">
+    <script defer src="http://localhost/Projet-csi/view/js/main.js"></script>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     
     <div class="e404">
         <h2 class="e404-title">404</h2>
-        <p>page non trouvé</p>
+        <p>page non trouvée</p>
         <a href="/Projet-csi/">Retour à l'accueil</a>
     </div>
     

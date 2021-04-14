@@ -25,10 +25,10 @@
 
     // Code PHP
     include('model/controller/function/renderPerso.php');
-    include('model/controller/function/renderCommand.php');
+    // include('model/controller/function/renderCommand.php');
     // IF SESSION EXISTS
     renderPerso($_SESSION['id'] ?? 1);
-    renderCommand($_SESSION['id'] ?? 1);
+    // renderCommand($_SESSION['id'] ?? 1);
 
 
     // Include footer
