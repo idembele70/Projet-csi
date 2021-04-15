@@ -1,6 +1,6 @@
 <?php 
 	// Paramètre connexion à la BDD
-	require_once '../config/dbConfig.php';
+	require '../config/dbConfig.php';
 
 	// Création d'un client
 	function createClient($nom, $prenom, $adresseMail, $motDePasse, $adresseLivraison, $adresseFacturation) {

@@ -29,7 +29,7 @@
             <h1 class="connexion-title">Connexion</h1>
             <form action="model/login.php" class="form-connexion" method="post">
                 <input class="form-input" type="email" name="username" placeholder="E-mail" required>
-                <input class="form-input" type="text" name="password" placeholder="Mot de passe" required>
+                <input class="form-input" type="password" name="password" placeholder="Mot de passe" required>
                 <button class="valider-connexion" type="submit">Connexion</button>
             </form>
         </div>
