@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION['connected'])) {
+    // Back to the attente.php
+    header('Location: ./');
+} 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,20 +14,15 @@
     <title>Espace Perso</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="view/css/style.css">
-    <script defer src="view/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="view/css/style.css">
+    <script defer src="view/js/main.js" type="text/javascript"></script>
 </head>
 
 <body>
 
     <?php
-   // Include header
-   if(isset($_SESSION['connected']) == true) {
+    // Include header
     include('view/header-connecte.php');
-    } else {
-        include('view/header-deconnecte.php');
-    }
-
 
     // Code PHP
     include('model/controller/function/renderPerso.php');

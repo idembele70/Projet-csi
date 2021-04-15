@@ -8,8 +8,8 @@
     <title>Produit</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="view/css/style.css">
-    <script defer src="view/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="view/css/style.css">
+    <script defer src="view/js/main.js" type="text/javascript"></script>
 </head>
 
 <body>

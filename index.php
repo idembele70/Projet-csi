@@ -34,6 +34,10 @@ $router->map('GET','/panier', function() {
 $router->map('GET','/espace_perso', function() {
     include('view/espacePerso.php');
 });
+// Definition espace perso route
+$router->map('GET','/403', function() {
+    include('view/403.php');
+});
 
 
 // Match the route
