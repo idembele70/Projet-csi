@@ -10,7 +10,7 @@ include('model/entity/perso.php');
 
 // Instanciation of the object AltoRouter
 $router = new AltoRouter();
-$router->setBasePath('/Projet-csi');
+$router->setBasePath('/php/Projet-csi');
 
 
 // Route's definition
