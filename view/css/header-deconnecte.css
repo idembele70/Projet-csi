@@ -1,0 +1,90 @@
+.inscription-disable, .connexion-disable{
+    animation: 1000ms opacityout;
+    display: none;
+}
+
+.bg-log{
+    position: fixed;
+    top: 118px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-darken-orange-color);
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+}
+
+.bg-log-disable{
+    height: 0;  
+}
+
+.bg-log-enable{
+    opacity: 1;
+    color: var(--primary-white-color);
+   animation: heightTopToBottom 500ms;
+}
+.inscription-enable, .connexion-enable {
+    width: 100vw;
+    min-width: 320px;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: opacityin 650ms;
+}
+
+.inscription-title, .connexion-title{
+    text-align: center;
+    margin: 6.25rem 0;
+}
+
+.form-inscription, .form-connexion{
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 45%;
+max-width: 420px;
+}
+.form-input{
+width: 100%;
+height: 30px;
+border-radius: 0;
+outline: none;
+border: none;
+font-size: 1rem;
+}
+.form-input:not(:last-child){
+    margin-bottom: 30px;
+}
+
+.close-login, .close-register{
+    width: 26px;
+    position:  absolute;
+    top:0%;
+    right:30px;
+    cursor: pointer;
+}
+
+.valider-inscription, .valider-connexion{
+    width: 140px;
+    height: 30px;
+    margin-left: auto;
+    color: var(--primary-white-color);
+    font-size: 1.3rem;
+    background: var(--primary-orange-color);
+    border: none;
+}
+
+/* larger */
+
+@media screen and (max-width:800px){
+    .inscription-enable, .connexion-enable {
+        top: 70px;
+    }
+    .bg-log{
+    top: 70px;
+    }
+}

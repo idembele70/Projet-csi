@@ -1,8 +1,51 @@
-RewriteEngine On # Activer le module Rewrite
+#le serveur doit suivre les liens symboliques
+Options +FollowSymlinks
 
-RewriteRule ^produit/?$ index.php [NC,L]
-RewriteRule ^contact/?$ index.php [NC,L]
-RewriteRule ^panier/?$ index.php [NC,L]
-RewriteRule ^espace_perso/?$ index.php [NC,L]
+# Masquer les informations du serveur (quand page forbidden)
+ServerSignature Off
 
-RewriteRule ^[^/]+/(\d+)$ index.php
+# Don't see the links/files
+Options All -Indexes
+
+# Encodage par défaut des fichiers textes et HTML
+AddDefaultCharset UTF-8
+
+# Redirection de la page 403 (forbidden)
+ErrorDocument 403 http://localhost/Projet-csi/403 
+
+# Activer le module Rewrite
+RewriteEngine On
+
+# Redirection vers le fichier index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$  index.php [L,QSA]
+
+# Aucun accès au fichier .htaccess
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+# Protections contre les attaques XSS, le clickjascking, le Sniffing et le remplacement des liens HTTP en HTTPS
+<IfModule mod_headers.c>
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Frame-Options: "sameorigin"
+Header set X-Content-Type-Options: "nosniff”
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# Recommendation W3C (si http, aucun envoi de l'origine)
+<IfModule headers_module.c>
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+
+# # A mettre quand il sera sur le net
+# HTTPS redirection
+# RewriteCond %{HTTPS} off
+# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+# A mettre quand il sera sur le net
+# Redirection du site sans www vers www
+# RewriteCond %{HTTPS_HOST} ^playduh.fr [NC]
+# RewriteRule ^(.*)$ https://www.playduh.fr/$1 [L,R=301]

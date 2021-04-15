@@ -7,13 +7,20 @@ function renderProduct(int $idProduct) {
 
     $query = (string) "SELECT * FROM produit WHERE idProduit = $idProduct";
 
-    $result = mysqli_query($conn, $query);
+    try {
+        $result = mysqli_query($conn, $query);
+    } catch(Exception $erreur) {
+        exit('Problème de connexion à la DB.'.$erreur);
+    }
+
     while ($row = mysqli_fetch_assoc($result)) {
         // Get datas
+        $viewProduct .= '<div>';
         $viewProduct .= '<span>'.$row['idProduit'].'</span>';
         $viewProduct .= '<span>'.$row['ref'].'</span>';
         $viewProduct .= '<span>'.$row['nom'].'</span>';
         $viewProduct .= '<span>'.$row['description'].'</span>';
+        $viewProduct .= '</div>';
 
     }
 

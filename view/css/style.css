@@ -1,0 +1,21 @@
+@import 'header.css';
+@import 'footer.css';
+@import 'keyframe.css';
+@import '404.css';
+
+:root{
+    --primary-white-color: #FFFFFF;
+    --primary-dark-color: #696969;
+    --secondary-dark-color: #272727;
+    --primary-orange-color: #ec8521;
+    --primary-darken-orange-color: #d4781e;
+}
+
+body {
+    margin: 0 auto;
+    min-width: 320px;
+}
+
+* {
+    font-family: 'Josefin Sans';
+}

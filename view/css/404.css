@@ -1,0 +1,43 @@
+.body-404{
+    height: 100vh;
+    background: var(--secondary-dark-color);
+    }
+    
+    .e404{
+        color: var(--primary-white-color);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .e404-title{
+        font-size: 6rem;
+    }
+    .e404 > *{
+        margin: 0;
+    }
+    .e404 > p {
+        font-size: 3rem;
+    }
+    .e404 > a {
+        text-decoration: none;
+        color: white;
+        background: var(--primary-orange-color);
+        width: 200px;
+        height: 38px;
+        line-height: 38px;
+        align-self: center;
+        margin-top: 50px;
+    }
+    
+    @media screen and (max-width: 800px) {
+        .e404 > a {
+            margin-top: 20px;
+        }
+        .e404-title{
+            font-size: 4rem;
+        }
+        .e404 > p {
+            font-size: 1.5rem;
+        }
+    }

@@ -1,37 +1,43 @@
 <?php
 
+// Start the session
+session_start();
 // Gestion of the files
 require('config/dbConfig.php'); 
 require('vendor/autoload.php');
+include('model/entity/perso.php');
 
 
 // Instanciation of the object AltoRouter
 $router = new AltoRouter();
-$router->setBasePath('/projetCommunPlayduh/projetPlayduh');
+$router->setBasePath('/Projet-csi');
 
 
 // Route's definition
 // Definition default route
 $router->map('GET','/', function() {
-    include('model/controller/homepage.php');
+    include('view/homepage.php');
 }); 
 // Definition contact route
 $router->map('GET','/contact', function() {
-    include('model/controller/contact.php');
+    include('view/contact.php');
 });
 // Definition product route
 $router->map('GET','/produit', function() {
-    include('model/controller/product.php');
+    include('view/product.php');
 });
 // Definition panier route
 $router->map('GET','/panier', function() {
-    include('model/controller/panier.php');
+    include('view/panier.php');
 });
 // Definition espace perso route
 $router->map('GET','/espace_perso', function() {
-    include('model/controller/espacePerso.php');
+    include('view/espacePerso.php');
 });
-
+// Definition espace perso route
+$router->map('GET','/403', function() {
+    include('view/403.php');
+});
 
 
 // Match the route
@@ -42,5 +48,5 @@ $match = $router->match();
 if ($match) {
     call_user_func_array($match['target'],$match['params']);
 } else {
-    include('model/controller/404.php');
+    include('view/404.php');
 }
