@@ -1,14 +1,5 @@
 <?php 
-	// Pour avoir accès aux données générées automatiquement par faker
 	require_once 'vendor/autoload.php';
-
-	$faker = Faker\Factory::create();
-
-	for ($i = 0; $i < 10; $i++) {
-		$faker->lastName;
-  		$faker->firstName;
-  		$faker->address;
-	}
 	// Connexion à la BDD
 // Faire des tests sur la connexion / déconnexion /!\
  
