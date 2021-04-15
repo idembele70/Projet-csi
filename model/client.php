@@ -1,32 +1,15 @@
 <?php 
-	// require_once 'vendor/autoload.php';
-	// Connexion à la BDD
-// Faire des tests sur la connexion / déconnexion /!\
- 
-
-	// Commexion à la BDD
-	function getDatabaseConnexion() {
-		try {
-		    $user = "root";
-			$pass = "";
-			$pdo = new PDO('mysql:host=localhost:3308;dbname=playduh', $user, $pass);
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			return $pdo;
-			
-		} catch (PDOException $e) {
-		    print "Erreur !: " . $e->getMessage() . "<br/>";
-		    die();
-		}
-	}
+	// Paramètre connexion à la BDD
+	require_once '../config/dbConfig.php';
 
 	// Création d'un client
 	function createClient($nom, $prenom, $adresseMail, $motDePasse, $adresseLivraison, $adresseFacturation) {
 		try {
-			$con = getDatabaseConnexion();
+			global $pdo;
 			$motDePasse = hash("sha256", $this->motDePasse);
 			$sql = "INSERT INTO client (nom, prenom, adresseMail, motDePasse, adresseLivraison, adresseFacturation) 
 					VALUES ('$nom', '$prenom', '$adresseMail', '$motDePasse', '$adresseLivraison', '$adresseFacturation')";
-	    	$con->exec($sql);
+	    	$pdo->exec($sql);
 	    	session_start();
 			$_SESSION['mail'] = $adresseMail;
 			$_SESSION['mdp'] = $motDePasse;
@@ -39,12 +22,12 @@
 	// Connexion client
 	function verifClient($adresseMail, $motDePasse) { //En paramètre les données récupérées du formulaire de connexion
 		try{
-			$con = getDatabaseConnexion();
+			global $pdo;
 			$adresseMail = (string) $adresseMail;
 			$motDePasse = (string) hash("sha256", $motDePasse);
 			// Request to send
 			$requete = "SELECT idClient, adresseMail, password from client where adresseMail = '$adresseMail' and `password` = '$motDePasse'";
-			$resultat_compte = $con->query($requete);
+			$resultat_compte = $pdo->query($requete);
 			// Formatting the datas for analogy
 			$tab_compte = $resultat_compte->fetchAll(PDO::FETCH_ASSOC);
 			// DB's deconnection
@@ -69,11 +52,11 @@
 	// Déconnexion client
 	function verifClientId($id) {
 		try{
-			$con = getDatabaseConnexion();
+			global $pdo;
 			$requete = "UPDATE client set 
 						isConnected = 0,
 						where id = '$id' ";
-			$stmt = $con->query($requete);
+			$stmt = $pdo->query($requete);
 
 			//Fermeture de la session et des variables qui lui sont associées
 			session_destroy();
@@ -90,11 +73,11 @@
 	// Mise à jour des infos du client (email)
 	function updateClient($adresseMail) {
 		try {
-			$con = getDatabaseConnexion();
+			global $pdo;
 			$requete = "UPDATE client set 
 						adresseMail = '$adresseMail',
 						where id = '$id' ";
-			$stmt = $con->query($requete);
+			$stmt = $pdo->query($requete);
 		}
 	    catch(PDOException $e) {
 	    	echo $sql . "<br>" . $e->getMessage();

@@ -2,8 +2,9 @@
 @import 'footer.css';
 @import 'keyframe.css';
 @import '404.css';
+@import 'contact.css';
 
-:root{
+:root {
     --primary-white-color: #FFFFFF;
     --primary-dark-color: #696969;
     --secondary-dark-color: #272727;
