@@ -11,7 +11,7 @@ Options All -Indexes
 AddDefaultCharset UTF-8
 
 # Redirection de la page 403 (forbidden)
-ErrorDocument 403 http://localhost/Projet-csi/403 
+ErrorDocument 403 http://www.playduh.fr/Projet-csi/403 
 
 # Activer le module Rewrite
 RewriteEngine On
