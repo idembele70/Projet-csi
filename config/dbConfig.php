@@ -4,7 +4,7 @@
 try {
     $user = "root";
     $pass = "";
-    $pdo = new PDO('mysql:host=localhost:3308;dbname=playduh', $user, $pass);
+    $pdo = new PDO('mysql:host=localhost;dbname=playduh', $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
 } catch (PDOException $e) {
     print "Erreur !: " . $e->getMessage() . "<br/>";

@@ -24,11 +24,25 @@ if (!isset($_SESSION['connected'])) {
     // Include header
     include('view/header-connecte.php');
 
+    ?>
+    <section class="bg-log contact">
+        <div class="inscription-enable connexion-enable">
+            <h1>Profil</h1>
+            <form action="">
+                <input readonly class="form-input" type="text" name="title" value="Nom">
+                <input readonly class="form-input" type="email" name="username" value="E-mail">
+                <input readonly class="form-input" type="email" name="username" value="Adresse de facturation">
+            </form>
+        </div>
+    </section>
+
+    <?php
+
     // Code PHP
-    include('model/controller/function/renderPerso.php');
+    // include('model/controller/function/renderPerso.php');
     // include('model/controller/function/renderCommand.php');
     // IF SESSION EXISTS
-    renderPerso($_SESSION['id'] ?? 1);
+    // renderPerso($_SESSION['id'] ?? 1);
     // renderCommand($_SESSION['id'] ?? 1);
 
 
