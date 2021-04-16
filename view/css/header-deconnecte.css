@@ -14,7 +14,6 @@
     width: 100vw;
     z-index: 2;
 }
-
 .bg-log-disable{
     height: 0;  
 }
@@ -42,20 +41,23 @@
 }
 
 .form-inscription, .form-connexion{
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 45%;
-max-width: 420px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    max-width: 420px;
+    }
 .form-input{
-width: 100%;
-height: 30px;
-border-radius: 0;
-outline: none;
-border: none;
-font-size: 1rem;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    outline: none;
+    border: none;
+    font-size: 1rem;
 }
+
 .form-input:not(:last-child){
     margin-bottom: 30px;
 }
@@ -63,7 +65,7 @@ font-size: 1rem;
 .close-login, .close-register{
     width: 26px;
     position:  absolute;
-    top:0%;
+    top: 0%;
     right:30px;
     cursor: pointer;
 }
@@ -76,6 +78,7 @@ font-size: 1rem;
     font-size: 1.3rem;
     background: var(--primary-orange-color);
     border: none;
+    cursor: pointer;
 }
 
 /* larger */

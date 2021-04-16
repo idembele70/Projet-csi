@@ -2,8 +2,10 @@
 @import 'footer.css';
 @import 'keyframe.css';
 @import '404.css';
+@import 'contact.css';
+@import 'product.css';
 
-:root{
+:root {
     --primary-white-color: #FFFFFF;
     --primary-dark-color: #696969;
     --secondary-dark-color: #272727;
@@ -14,6 +16,7 @@
 body {
     margin: 0 auto;
     min-width: 320px;
+    position: relative;
 }
 
 * {

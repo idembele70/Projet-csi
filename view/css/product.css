@@ -1,7 +1,130 @@
 .body-product{
-    
+    position: relative;
+    height: 100vh;
 }
 
-.container{
-    height: auto;
+.container-product{
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.article-image{
+   max-height: 80%;
+    margin-right: 30px;
+}
+
+.product-description {
+    width: 300px;
+    height: 601px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-title{
+    margin-bottom: 40px;
+}
+.product-description h2{
+    margin: 10px 0;
+    font-size: 2.5rem;
+    color: var(--primary-orange-color);
+}
+.product-description a {
+    text-decoration: none;
+    color: white;
+    background: var(--primary-orange-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    line-height: 30px;
+    font-size: 2rem;
+}
+.product-description p{
+    font-size: 1.75rem;
+}
+
+@media screen and (max-width:980px) {
+    .article-image{
+        max-height: 60%;
+    }
+    .product-description h2{
+        font-size: 1.8rem;
+
+    }
+    .product-description a {
+        font-size: 1.2rem;
+    }
+    .product-description p{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container-product{
+        position: absolute;
+        flex-direction: column;
+        top: 120px;
+        bottom: 185px;
+        height: auto;
+        width: 100%;
+    }
+    
+    
+    .article-image{
+        max-height: 40%;
+    }
+    .product-description {
+        height:100%;
+    }
+    .product-title{
+        margin-bottom: 40px;
+    }
+    .product-description h2{
+        font-size: 1.5rem;
+        color: var(--primary-orange-color);
+    }
+    .product-description a {
+        text-decoration: none;
+        color: white;
+        background: var(--primary-orange-color);
+        padding: 10px;
+        margin-bottom: 10px;
+        line-height: 15px;
+        font-size: 1rem;
+    }
+    .product-description p{
+        font-size: 1rem;
+    }
+    @media screen and (max-height: 770px) {
+        .body-product {
+           min-height: 770px;
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+.article-image{
+    height: 40vh;
+}
+.product-description {
+    width: 30%;
+    height: 70%;
+}
+.product-title{
+    margin-bottom: 40px;
+}
+.product-description h2{
+    margin: 10px 0;
+    font-size: 4em;
+    color: var(--primary-orange-color);
+}
+.product-description a {
+    font-size: 3rem;
+}
+.product-description p{
+    max-width: 500px;
+    font-size: 2.75rem;
+    text-align: justify;
+}
 }

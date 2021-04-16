@@ -3,7 +3,7 @@
     background: var(--secondary-dark-color);
     }
     
-    .e404{
+.e404{
         color: var(--primary-white-color);
         text-align: center;
         display: flex;
@@ -39,5 +39,37 @@
         }
         .e404 > p {
             font-size: 1.5rem;
+        }
+    }
+    @media screen and (min-width: 1440px) {
+       
+        .e404-title{
+            font-size: 10rem;
+        }
+        .e404 > p {
+            font-size: 5rem;
+        }
+        .e404 > a {
+            width: 400px;
+            height: 90px;
+            line-height: 90px;
+            margin-top: 35px;
+            font-size: 3rem;
+        }
+    }
+    @media screen and (min-width: 1900px) {
+       
+        .e404-title{
+            font-size: 23rem;
+        }
+        .e404 > p {
+            font-size: 9rem;
+        }
+        .e404 > a {
+            width: 400px;
+            height: 90px;
+            line-height: 90px;
+            margin-top: 35px;
+            font-size: 3rem;
         }
     }
