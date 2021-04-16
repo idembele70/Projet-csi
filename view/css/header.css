@@ -39,6 +39,7 @@ header{
     width: 222px;
     color: var(--primary-white-color);
     text-decoration: none;
+    cursor: pointer;
 }
 
 @media screen and (max-width:800px){
