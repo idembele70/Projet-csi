@@ -37,7 +37,7 @@
         </div>
     </div>
     <?php
-    // include './model/controller/_login.php';
+    // include footer;
     include 'footer.php';?>
     
 </body>
