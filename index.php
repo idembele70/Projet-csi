@@ -5,7 +5,6 @@ session_start();
 // Gestion of the files
 require('config/dbConfig.php'); 
 require('vendor/autoload.php');
-include('model/entity/perso.php');
 
 
 // Instanciation of the object AltoRouter

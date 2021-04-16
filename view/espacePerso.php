@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['connected'])) {
-    // Back to the attente.php
+    // Back to the homepage.php
     header('Location: ./');
 } 
 ?>
