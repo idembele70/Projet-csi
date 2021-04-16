@@ -27,7 +27,7 @@
         <div class="inscription-enable connexion-enable">
             <h1>Contactez nous</h1>
             <form action="/contact.php">
-                <input class="form-input" type="text" name="title" placeholder="Text">
+                <input class="form-input" type="text" name="title" placeholder="Nom - Prénom">
                 <input class="form-input" type="email" name="username" placeholder="E-mail">
                 <textarea class="form-textarea" name="message" rows="12" placeholder="Message"></textarea>
                 <input class="valider-connexion" type="submit" value="Envoyer">
