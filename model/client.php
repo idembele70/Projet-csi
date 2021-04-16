@@ -22,6 +22,7 @@
 	// Connexion client
 	function verifClient($adresseMail, $motDePasse) { //En paramètre les données récupérées du formulaire de connexion
 		try{
+			var_dump(" lellrlel");
 			global $pdo;
 			$adresseMail = (string) $adresseMail;
 			$motDePasse = (string) hash("sha256", $motDePasse);

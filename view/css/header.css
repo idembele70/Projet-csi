@@ -31,12 +31,12 @@ header{
 }
 
 .nav-list{
-    width: 530px;
+    max-width: 530px;
     display: flex;
     justify-content: space-between;
 }
 .nav-item {
-    width: 222px;
+    padding: 0 20px;
     color: var(--primary-white-color);
     text-decoration: none;
     cursor: pointer;

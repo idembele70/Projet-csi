@@ -38,11 +38,11 @@ hamburgerList.addEventListener('click', () => {
         navList.classList.remove('nav-list');
         navList.classList.add('nav-list-enable');
         // cacher le message d'erreur avant d'ouvrir le menu
-       e404 ? e404.style.opacity = 0 : null;
+        e404 ? e404.style.opacity = 0 : null;
         //Desactiver navbar
     } else {
         // afficher e404 apres avoir ferme le menu
-       e404 ? setTimeout(() => {
+        e404 ? setTimeout(() => {
             e404.style.opacity = 1;
         }, 500) : null;
         // mettre le header a disable
@@ -144,8 +144,5 @@ logo.onclick = function () { location.href = '/projet-csi/'; }
 
 
 if (!!ContainerProduit) {
-    const bodyheight = (window.innerHeight);
-    console.log(bodyheight + '\n');
-    console.log(footer.clientHeight);
-
+    document.body.classList.toggle('body-product')
 }

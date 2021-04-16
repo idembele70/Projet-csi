@@ -3,6 +3,7 @@
 @import 'keyframe.css';
 @import '404.css';
 @import 'contact.css';
+@import 'product.css';
 
 :root {
     --primary-white-color: #FFFFFF;

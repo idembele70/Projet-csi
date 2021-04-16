@@ -21,28 +21,24 @@
     } else {
         include('view/header-deconnecte.php');
     }
-
-
-    echo 'product';
     // Code PHP
-    include('function/renderProduct.php');
-    renderProduct($idProduct ?? 2);
     ?>
     <div class="container-product">
-        <img src="view/assets/img/item_sushi.png" alt="image d'un article ">
-        <div class=""> <span>Les sushi</span>
-            <span>Nulla ex libero</span>
-            <span>porta eget</span>
-        </div>
-        <div class="">
-            <button>Ajouter au panier</button>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+        <img class="article-image" src="/Projet-csi/view/assets/img/item_sushi.png" alt="image d'un article ">
+        <div class="product-description">
+            <div class="product-title">
+                <h2>Les sushi</h2>
+                <h2>Nulla ex libero,</h2>
+                <h2>porta eget</h2>
+            </div>
+            <span>
+                <a href="">Ajouter au panier</a></span>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
         </div>
     </div>
-    
     <?php
-    include('view/footer.php');
-    ?>
+    // include './model/controller/_login.php';
+    include 'footer.php';?>
     
 </body>
 

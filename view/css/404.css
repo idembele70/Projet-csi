@@ -3,7 +3,7 @@
     background: var(--secondary-dark-color);
     }
     
-    .e404{
+.e404{
         color: var(--primary-white-color);
         text-align: center;
         display: flex;

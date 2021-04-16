@@ -15,6 +15,7 @@
 <body>
     <?php
     // Include header
+
     if(isset($_SESSION['connected']) == true) {
         include('view/header-connecte.php');
     } else {
