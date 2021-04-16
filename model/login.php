@@ -5,7 +5,6 @@ include 'client.php';
 // start the session
 session_start();
 // Verification
-var_dump($_POST);
 if ((filter_var($_POST['username'], FILTER_VALIDATE_EMAIL)) && isset($_POST['password'])) {
     // Securization of data
     $username = (string) trim(htmlspecialchars(strip_tags($_POST["username"])));

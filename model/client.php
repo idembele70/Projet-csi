@@ -1,6 +1,6 @@
 <?php 
-	// Paramètre connexion à la BDD
-	require '../config/dbConfig.php';
+
+	include 'dbConfig.php';
 
 	// Création d'un client
 	function createClient($nom, $prenom, $adresseMail, $motDePasse, $adresseLivraison, $adresseFacturation) {
@@ -22,7 +22,6 @@
 	// Connexion client
 	function verifClient($adresseMail, $motDePasse) { //En paramètre les données récupérées du formulaire de connexion
 		try{
-			var_dump(" lellrlel");
 			global $pdo;
 			$adresseMail = (string) $adresseMail;
 			$motDePasse = (string) hash("sha256", $motDePasse);
@@ -85,7 +84,35 @@
 	    }
 	}
 
-	
+	function renderPerso(int $persoAct) {
+
+		global $pdo;
+		$viewPerso = [];
+
+		$query = (string) "SELECT * FROM client WHERE idClient = $persoAct";
+
+		try {
+			$result_client = $pdo->query($query);
+			$tab_client = $result_client->fetchAll(PDO::FETCH_ASSOC);
+		} catch(Exception $erreur) {
+			exit('Problème de connexion à la DB.'.$erreur);
+		}
+
+		foreach ($tab_client as $row) {
+			$viewPerso = array(
+				'id' => $row['idClient'],
+				'nom' => $row['nom'], 
+				'prénom' => $row['prenom'], 
+				'mail' => $row['adresseMail'], 
+				'livraison' => $row['adresseLivraison'], 
+				'facturation' => $row['adresseFacturation']
+			);
+		}
+
+		return $viewPerso;
+
+	}
+
 	// Vide le champ mot de passe pour être remplacé
 	// Lors de l'envoi d'un mail, le mail doit contenir un en-tête From --> additional_params dans le php.ini pour ne pas avoir d'erreurs 
 	// Voir PHPMailer

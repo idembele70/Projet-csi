@@ -3,7 +3,8 @@
 // Start the session
 session_start();
 // Gestion of the files
-require('config/dbConfig.php'); 
+require('model/dbConfig.php'); 
+require('model/client.php'); 
 require('vendor/autoload.php');
 
 

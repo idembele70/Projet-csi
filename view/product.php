@@ -23,6 +23,7 @@
     }
     // Code PHP
     ?>
+
     <div class="container-product">
         <img class="article-image" src="/Projet-csi/view/assets/img/item_sushi.png" alt="image d'un article ">
         <div class="product-description">
@@ -36,9 +37,11 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
         </div>
     </div>
+
     <?php
     // include footer;
-    include 'footer.php';?>
+    include 'footer.php';
+    ?>
     
 </body>
 

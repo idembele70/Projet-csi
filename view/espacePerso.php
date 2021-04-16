@@ -24,11 +24,9 @@ if (!isset($_SESSION['connected'])) {
     // Include header
     include('view/header-connecte.php');
 
-    // Code PHP
-    include('model/controller/function/renderPerso.php');
-    // include('model/controller/function/renderCommand.php');
-    // IF SESSION EXISTS
-    renderPerso($_SESSION['id'] ?? 1);
+    // data client
+    $data = renderPerso($_SESSION['id']);
+    var_dump($data);
     // renderCommand($_SESSION['id'] ?? 1);
 
 
