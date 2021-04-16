@@ -1,0 +1,49 @@
+.panier{
+    width: 80%;
+    margin: auto;
+}
+
+.panier h1{
+    text-align: center;
+    margin: 24px 0;
+}
+
+.article{
+    background-color: var(--secondary-dark-color);
+    position: relative;
+    display: flex;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.article img{
+    height: 280px;
+}
+
+.article .infos{
+    color: white;
+    margin-left: 20px;
+}
+
+.article .infos h4{
+    font-size: 35px;
+    margin: 0 0 20px 0;
+}
+
+.article .infos span{
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.article .infos button{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  padding: 10px;
+  background-color: var(--primary-orange-color);
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+}
