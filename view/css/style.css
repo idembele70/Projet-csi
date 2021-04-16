@@ -3,6 +3,7 @@
 @import 'keyframe.css';
 @import '404.css';
 @import 'contact.css';
+@import 'panier.css';
 
 :root {
     --primary-white-color: #FFFFFF;
@@ -15,7 +16,7 @@
 body {
     margin: 0 auto;
     min-width: 320px;
-    /* position: relative; */
+    position: relative;
 }
 
 * {

@@ -20,8 +20,29 @@
     } else {
         include('view/header-deconnecte.php');
     }
-
-    echo 'panier';
+    ?>
+    <main>
+        <div class="panier">
+            <h1>Panier</h1>
+            <div class="article">
+                <img src="view/assets/img/item_sushi.png" alt="image d'un article ">
+                <div class="infos">
+                    <h4>Les sushi Nulla ex libero porta eget</h4>
+                    <span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum doloribus maxime, eius mollitia velit ut minima delectus, placeat, eos ad. Sit, cum. Nobis ullam deleniti nesciunt ratione, unde nostrum?</span>
+                    <button>Retiré du panier</button>
+                </div>
+            </div>
+            <div class="article">
+                <img src="view/assets/img/item_sushi.png" alt="image d'un article ">
+                <div class="infos">
+                    <h4>Les sushi Nulla ex libero porta eget</h4>
+                    <span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum doloribus maxime, eius mollitia velit ut minima delectus, placeat, eos ad. Sit, cum. Nobis ullam deleniti nesciunt ratione, unde nostrum?</span>
+                    <button>Retiré du panier</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <?php
 
     // Include footer
     include('view/footer.php');
