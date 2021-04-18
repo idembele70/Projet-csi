@@ -23,17 +23,19 @@ if (!isset($_SESSION['connected'])) {
     <?php
     // Include header
     include('view/header-connecte.php');
+    ?>
 
+    <?php
     // data client
     $data = renderPerso($_SESSION['id']);
-    var_dump($data);
-    // renderCommand($_SESSION['id'] ?? 1);
+    echo $data['id'];
+    ?>
 
-
+    <?php
     // Include footer
     include('view/footer.php');
     ?>
-
+    
 </body>
 
 </html>
