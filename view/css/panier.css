@@ -1,6 +1,14 @@
+.body-panier {
+    position: relative;
+    min-height: 100vh;
+}
+
 .panier{
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .panier h1{
@@ -9,26 +17,33 @@
 }
 
 .article{
+    width: 70%;
     background-color: var(--secondary-dark-color);
     position: relative;
     display: flex;
     padding: 25px;
     margin-bottom: 20px;
+    width: 800px;
 }
 
 .article img{
-    height: 280px;
+    height: 250px;
 }
 
 .article .infos{
     color: white;
     margin-left: 20px;
 }
-
 .article .infos h4{
-    font-size: 35px;
+    font-size: 2rem;
     margin: 0 0 20px 0;
+    max-height: 70px;
 }
+.article-description{
+    max-height: 125px;
+   /*  overflow-y: scroll; */
+}
+
 
 .article .infos span{
     margin-top: 15px;
@@ -46,4 +61,54 @@
   font-weight: 600;
   font-size: 20px;
   cursor: pointer;
+}
+
+@media screen and (max-width:1000px){
+    
+.article .infos h4{
+    font-size: 1.5rem
+}
+}
+@media screen and (max-width:800px){
+    .body-panier{
+        min-height: 150vh; 
+    }
+    .article{
+        max-width: 375px;
+       flex-direction: column;
+    }
+    .article > img {
+        max-height: 200px;
+       max-width: 257px; 
+       align-self: center;
+       margin-bottom: 10px;
+    }
+    .infos {
+        display: flex;
+        flex-direction: column;
+    }
+    .article-description{
+        overflow: hidden;
+    }
+    .article .infos button{
+        position: initial;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width:500px){
+    .article{
+        width: 250px;
+    }
+}
+
+@media screen and (min-height:560px){
+    .body-panier{
+        min-height: 165vh;
+    }
+}
+@media screen and (min-height:830px){
+    .body-panier{
+        min-height: 100vh;
+    }
 }

@@ -14,7 +14,7 @@ const e404 = document.querySelector('.e404');
 const logo = document.querySelector('.logo');
 const footer = document.querySelector('footer');
 const ContainerProduit = document.querySelector('.container-product');
-
+const panier = document.querySelector('.panier');
 
 // Evenement
 hamburgerList.addEventListener('click', () => {
@@ -145,4 +145,8 @@ logo.onclick = function () { location.href = '/projet-csi/'; }
 
 if (!!ContainerProduit) {
     document.body.classList.toggle('body-product')
+}
+
+if(!!panier){
+    document.body.classList.toggle('body-panier');
 }
