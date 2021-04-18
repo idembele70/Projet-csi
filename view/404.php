@@ -12,6 +12,10 @@
     <script defer src="http://localhost/Projet-csi/view/js/main.js" type="text/javascript"></script>
 </head>
 
+<!-- 
+faire un timeout qui redirige vers la page d'accueil.
+ -->
+
 <body>
     <?php
         // Include header

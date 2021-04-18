@@ -15,17 +15,36 @@
 <body>
     <?php
     // Include header
-    if(isset($_SESSION['connected']) == true) {
+    if (isset($_SESSION['connected']) == true) {
         include('view/header-connecte.php');
     } else {
         include('view/header-deconnecte.php');
     }
-
-    echo 'panier';
-
-    // Include footer
-    include('view/footer.php');
     ?>
+    <div class="panier">
+        <h1>Panier</h1>
+        <div class="article">
+            <img src="view/assets/img/item_sushi.png" alt="image d'un article ">
+            <div class="infos">
+                <h4>Les sushi Nulla ex libero porta eget</h4>
+                <p class="article-description"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum doloribus maxime, eius mollitia velit ut minima delectus, placeat, eos ad. Sit, cum. Nobis ullam deleniti nesciunt ratione, unde nostrum?</p>
+                <button>Retiré du panier</button>
+            </div>
+        </div>
+        <!-- <div class="article">
+                <img src="view/assets/img/item_sushi.png" alt="image d'un article ">
+                <div class="infos">
+                    <h4>Les sushi Nulla ex libero porta eget</h4>
+                    <span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum doloribus maxime, eius mollitia velit ut minima delectus, placeat, eos ad. Sit, cum. Nobis ullam deleniti nesciunt ratione, unde nostrum?</span>
+                    <button>Retiré du panier</button>
+                </div>
+            </div>
+        </div> -->
+        <?php
+
+        // Include footer
+        include('view/footer.php');
+        ?>
 </body>
 
 </html>
