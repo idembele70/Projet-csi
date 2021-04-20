@@ -1,3 +1,11 @@
+<?php
+    // data client
+    if($_GET) {
+        $dataProduct = renderProduct($_GET['id']);
+    } else {
+        $dataProduct = renderProduct(1);
+    }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,19 +29,19 @@
     } else {
         include('view/header-deconnecte.php');
     }
-    // Code PHP
     ?>
 
     <div class="container-product">
         <img class="article-image" src="/Projet-csi/view/assets/img/item_sushi.png" alt="image d'un article ">
         <div class="product-description">
             <div class="product-title">
-                <h2>Les sushi</h2>
+                <h2><?php echo $dataProduct['id']; ?></h2>
                 <h2>Nulla ex libero,</h2>
                 <h2>porta eget</h2>
             </div>
             <span>
-                <a href="">Ajouter au panier</a></span>
+                <a href="">Ajouter au panier</a>
+            </span>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
         </div>
     </div>
