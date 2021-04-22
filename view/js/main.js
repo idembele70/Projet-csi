@@ -147,6 +147,13 @@ if (!!ContainerProduit) {
     document.body.classList.toggle('body-product')
 }
 
-if(!!panier){
+if (!!panier) {
     document.body.classList.toggle('body-panier');
+    window.addEventListener('load', () => {
+        if (document.body.offsetWidth < 800 || document.body.offsetHeight < 600) {
+            document.body.style.minHeight = 180 + document.body.offsetHeight + 'px';
+        
+        }
+
+    })
 }

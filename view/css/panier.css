@@ -1,6 +1,6 @@
 .body-panier {
     position: relative;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .panier{
@@ -71,7 +71,7 @@
 }
 @media screen and (max-width:800px){
     .body-panier{
-        min-height: 150vh; 
+        /* min-height: 100vh;  */
     }
     .article{
         max-width: 375px;
@@ -99,16 +99,5 @@
 @media screen and (max-width:500px){
     .article{
         width: 250px;
-    }
-}
-
-@media screen and (min-height:560px){
-    .body-panier{
-        min-height: 165vh;
-    }
-}
-@media screen and (min-height:830px){
-    .body-panier{
-        min-height: 100vh;
     }
 }
