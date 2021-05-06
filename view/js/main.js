@@ -15,6 +15,8 @@ const logo = document.querySelector('.logo');
 const footer = document.querySelector('footer');
 const ContainerProduit = document.querySelector('.container-product');
 const panier = document.querySelector('.panier');
+const homePage = document.querySelector('.homepage');
+const inputEmail = document.querySelectorAll("form-input")
 
 // Evenement
 hamburgerList.addEventListener('click', () => {
@@ -90,6 +92,9 @@ if (!!btnConnexion) {
         bgLog.classList.add('bg-log-enable');
         bgLog.removeAttribute('style');
     }
+    //desactiver si user saisie correspond pas au regex
+    
+
 }
 // Close connexion inscription
 if (btnCloseLogin && btnCloseRegister) {
@@ -152,8 +157,22 @@ if (!!panier) {
     window.addEventListener('load', () => {
         if (document.body.offsetWidth < 800 || document.body.offsetHeight < 600) {
             document.body.style.minHeight = 180 + document.body.offsetHeight + 'px';
-        
+
         }
 
+    })
+}
+
+if (!!homePage) {
+    let progress = 0;
+    addEventListener('load', () => {
+        const item = document.body.querySelectorAll('.container_article_item img');
+        const container = document.body.querySelector('.container_article_item').clientHeight;
+        const title1 = document.body.querySelector('h1').clientHeight;
+        if (document.body.clientWidth < 800) {
+            item.forEach(i => progress += i.clientHeight)
+            document.body.style.height = header.clientHeight + container + title1 + item[0].clientHeight + "px";
+        } else
+            document.body.style.height = document.body.clientHeight + "px";
     })
 }
