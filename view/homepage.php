@@ -29,37 +29,37 @@
         </h1>
     </div>
     <div class="container_article_item">
-        <a class="link_article" href="mapage.php?id=1">
+        <a class="link_article" href="produit?id=1">
             <div class="item_article">
                 <img src="/Projet-csi/view/assets/img/item_sushi.png">
                 <p>Les sushis</p>
             </div>
         </a>
-        <a class="link_article" href="mapage.php?id=2">
+        <a class="link_article" href="produit?id=2">
             <div class="item_article">
                 <img src="/Projet-csi/view/assets/img/item_desert.png">
                 <p>Les desserts</p>
             </div>
         </a>
-        <a class="link_article" href="mapage.php?id=3">
+        <a class="link_article" href="produit?id=3">
             <div class="item_article">
                 <img src="/Projet-csi/view/assets/img/item_pack_debutant.png">
                 <p>Le pack débutant</p>
             </div>
         </a>
-        <a class="link_article" href="mapage.php?id=4">
+        <a class="link_article" href="produit?id=4">
             <div class="item_article">
                 <img src="/Projet-csi/view/assets/img/item_panda.png">
                 <p>Le panda</p>
             </div>
         </a>
-        <a class="link_article" href="mapage.php?id=5">
+        <a class="link_article" href="produit?id=5">
             <div class="item_article">
                 <img src="/Projet-csi/view/assets/img/item_flamant.png">
                 <p>Le flament rose</p>
             </div>
         </a>
-        <a class="link_article" href="mapage.php?id=6">
+        <a class="link_article" href="produit?id=6">
             <div class="item_article">
                 <img src="/Projet-csi/view/assets/img/item_licorna.png">
                 <p>La licorne</p>
