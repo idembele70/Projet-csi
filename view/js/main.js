@@ -75,7 +75,25 @@ if (!!btnInscription) {
         bgLog.classList.remove('bg-log-disable')
         bgLog.classList.add('bg-log-enable');
         bgLog.removeAttribute('style');
+
     }
+    const inputs = bgLog.querySelectorAll('input');
+    const validerIncription = bgLog.querySelector('.valider-inscription')
+    let isNull = true;
+    addEventListener('input', () => {
+        isNull = false;
+        inputs.forEach(input => {
+            if (input.value == '') isNull = true;
+        })
+        console.log(validerIncription);
+        if (isNull) {
+            validerIncription.disabled = isNull;
+        } else {
+            console.log(isNull);
+            validerIncription.disabled = isNull;
+            
+        }
+    })
 }
 // div connexion
 // close inscription & connexion
@@ -149,7 +167,9 @@ logo.onclick = function () { location.href = '/projet-csi/'; }
 if (!!ContainerProduit) {
     document.body.classList.toggle('body-product')
 
-    
+    function ajoutPanier(me) {
+        console.log(me);
+    }
 }
 
 

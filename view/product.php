@@ -40,7 +40,7 @@
                 <h2><?php echo $dataProduct['livraison']; ?>€</h2>
             </div>
             <span>
-                <a href="">Ajouter au panier</a>
+                <a onclick="ajoutPanier(this)">Ajouter au panier</a>
             </span>
             <p><strong>Stock : <?php echo $dataProduct['facturation'];?></strong> <br> sit amet consectetur adipisicing elit.
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
