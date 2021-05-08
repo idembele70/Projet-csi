@@ -93,7 +93,7 @@ if (!!btnConnexion) {
         bgLog.removeAttribute('style');
     }
     //desactiver si user saisie correspond pas au regex
-    
+
 
 }
 // Close connexion inscription
@@ -145,20 +145,20 @@ if (!!e404) {
 // Go To home page
 logo.onclick = function () { location.href = '/projet-csi/'; }
 
-// Product.js
-
-
+// Product
 if (!!ContainerProduit) {
     document.body.classList.toggle('body-product')
 }
 
+
+// Panier 
 if (!!panier) {
     document.body.classList.toggle('body-panier');
     window.addEventListener('load', () => {
         if (document.body.offsetWidth < 800 || document.body.offsetHeight < 600) {
             document.body.style.minHeight = 180 + document.body.offsetHeight + 'px';
-
         }
+
 
     })
 }
