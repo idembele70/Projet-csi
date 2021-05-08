@@ -148,6 +148,8 @@ logo.onclick = function () { location.href = '/projet-csi/'; }
 // Product
 if (!!ContainerProduit) {
     document.body.classList.toggle('body-product')
+
+    
 }
 
 
@@ -175,4 +177,16 @@ if (!!homePage) {
         } else
             document.body.style.height = document.body.clientHeight + "px";
     })
+}
+
+// Espace perso
+const espacePerso = document.querySelector('.espacePerso');
+const mainEspacePerso = document.querySelector('main');
+if (!!espacePerso) {
+
+    onload = () => {
+        const espacePersoHeight = this.document.body.clientHeight
+        mainEspacePerso.style.height = espacePersoHeight - header.clientHeight - footer.clientHeight + "px";
+
+    }
 }

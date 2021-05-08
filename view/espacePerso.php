@@ -2,7 +2,7 @@
 if (!isset($_SESSION['connected'])) {
     // Back to the homepage.php
     header('Location: ./');
-} 
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,7 +18,7 @@ if (!isset($_SESSION['connected'])) {
     <script defer src="view/js/main.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body class="espacePerso">
 
     <?php
     // Include header
@@ -28,14 +28,21 @@ if (!isset($_SESSION['connected'])) {
     <?php
     // data client
     $data = renderPerso($_SESSION['id']);
-    echo $data['id'];
     ?>
-
+    <main>
+        <?php /* echo $data['id']; */ ?>
+        <h1>Profil</h1>
+        <form>
+            <input type='text' placeholder="Nom" name="nom" id="nom">
+            <input type='email' placeholder="E-mail" name="email" id="email">
+            <input type='text' placeholder="Adresse de facturation" name="adresse" id="adresse">
+        </form>
+    </main>
     <?php
     // Include footer
     include('view/footer.php');
     ?>
-    
+
 </body>
 
 </html>
