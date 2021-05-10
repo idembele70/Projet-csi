@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  jeu. 15 avr. 2021 à 08:58
+-- Généré le :  lun. 10 mai 2021 à 12:03
 -- Version du serveur :  5.7.28
 -- Version de PHP :  7.3.12
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 --
 
 INSERT INTO `client` (`idClient`, `nom`, `prenom`, `adresseMail`, `password`, `adresseLivraison`, `adresseFacturation`) VALUES
-(1, 'DEMBELE', 'Ibrahim', 'ibrahim@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08D2', 'test', 'test'),
+(1, 'DEMBELE', 'Ibrahim', 'ibrahim@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', 'test', 'test'),
 (2, 'GALIANA', 'Loic', 'loic@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', 'test', 'test'),
 (3, 'BERNARD', 'Manon', 'manon@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', 'test', 'test'),
 (4, 'BOSC', 'Nicolas', 'nicolas@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', 'test', 'test'),
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `price` decimal(10,2) NOT NULL,
   `stock` int(11) NOT NULL,
   PRIMARY KEY (`idProduit`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `produit`
@@ -132,7 +132,9 @@ INSERT INTO `produit` (`idProduit`, `ref`, `nom`, `description`, `price`, `stock
 (1, 'fimo1', 'Fimo Jaune', 'test', '2.01', 10),
 (2, 'fimo2', 'Fimo Vert', 'test', '3.50', 10),
 (3, 'fimo3', 'Fimo Violet', 'test', '50.00', 10),
-(4, 'fimo4', 'Fimo Noir', 'test', '35.26', 10);
+(4, 'fimo4', 'Fimo Noir', 'test', '35.26', 10),
+(5, 'fimo5', 'Fimo Pourpre', 'test', '38.26', 10),
+(6, 'fimo6', 'Fimo Rouge', 'test', '3.26', 10);
 
 --
 -- Contraintes pour les tables déchargées

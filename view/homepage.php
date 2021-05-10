@@ -31,37 +31,37 @@
     <div class="container_article_item">
         <a class="link_article" href="produit?id=1">
             <div class="item_article">
-                <img src="/Projet-csi/view/assets/img/item_sushi.png">
+                <img src="/Projet-csi/view/assets/img/fimo1.png">
                 <p>Les sushis</p>
             </div>
         </a>
         <a class="link_article" href="produit?id=2">
             <div class="item_article">
-                <img src="/Projet-csi/view/assets/img/item_desert.png">
+                <img src="/Projet-csi/view/assets/img/fimo2.png">
                 <p>Les desserts</p>
             </div>
         </a>
         <a class="link_article" href="produit?id=3">
             <div class="item_article">
-                <img src="/Projet-csi/view/assets/img/item_pack_debutant.png">
+                <img src="/Projet-csi/view/assets/img/fimo3.png">
                 <p>Le pack débutant</p>
             </div>
         </a>
         <a class="link_article" href="produit?id=4">
             <div class="item_article">
-                <img src="/Projet-csi/view/assets/img/item_panda.png">
+                <img src="/Projet-csi/view/assets/img/fimo4.png">
                 <p>Le panda</p>
             </div>
         </a>
         <a class="link_article" href="produit?id=5">
             <div class="item_article">
-                <img src="/Projet-csi/view/assets/img/item_flamant.png">
+                <img src="/Projet-csi/view/assets/img/fimo5.png">
                 <p>Le flament rose</p>
             </div>
         </a>
         <a class="link_article" href="produit?id=6">
             <div class="item_article">
-                <img src="/Projet-csi/view/assets/img/item_licorna.png">
+                <img src="/Projet-csi/view/assets/img/fimo6.png">
                 <p>La licorne</p>
             </div>
         </a>
