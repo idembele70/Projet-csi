@@ -13,15 +13,24 @@
 </head>
 
 <body class="homepage">
+
     <?php
     // Include header
-
     if (isset($_SESSION['connected']) == true) {
         include('view/header-connecte.php');
     } else {
         include('view/header-deconnecte.php');
     }
     ?>
+
+    <div id="slider">
+        <figure>
+                <img src="view/assets/img/img_slider_home.png">
+                <img src="view/assets/img/img_slider_home_2.png">
+                <img src="view/assets/img/img_slider_home_3.png">
+                <img src="view/assets/img/img_slider_home.png">
+        </figure>
+    </div>
 
     <div class="titre_article">
         <h1>
@@ -66,6 +75,7 @@
             </div>
         </a>
     </div>
+
     <?php
     // Include footer
     include('view/footer.php');

@@ -31,6 +31,7 @@
                 <button>Retiré du panier</button>
             </div>
         </div>
+
         <!--  <div class="article">
                 <img src="view/assets/img/fimo2.png" alt="image d'un article ">
                 <div class="infos">
