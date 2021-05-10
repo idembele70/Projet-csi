@@ -77,7 +77,11 @@ if (!!btnInscription) {
         bgLog.removeAttribute('style');
 
     }
-    const inputs = bgLog.querySelectorAll('input');
+        /* 
+        STOP
+        */
+
+   /*  const inputs = bgLog.querySelectorAll('input');
     const validerIncription = bgLog.querySelector('.valider-inscription')
     let isNull = true;
     addEventListener('input', () => {
@@ -93,7 +97,9 @@ if (!!btnInscription) {
             validerIncription.disabled = isNull;
             
         }
-    })
+    }) */
+    
+    // STOP
 }
 // div connexion
 // close inscription & connexion
