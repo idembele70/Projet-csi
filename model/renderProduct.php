@@ -1,6 +1,5 @@
 <?php
 
-// include 'dbConfig.php';
 
 function renderProduct(int $idProduct) {
 

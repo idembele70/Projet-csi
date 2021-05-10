@@ -6,13 +6,12 @@
 	function createClient($nom, $prenom, $adresseMail, $motDePasse, $adresseLivraison, $adresseFacturation) {
 		try {
 			global $pdo;
-			$motDePasse = hash("sha256", $this->motDePasse);
-			$sql = "INSERT INTO client (nom, prenom, adresseMail, motDePasse, adresseLivraison, adresseFacturation) 
+			var_dump('okok');
+			$motDePasse = hash("sha256", $motDePasse);
+			$sql = "INSERT INTO client (nom, prenom, adresseMail, password, adresseLivraison, adresseFacturation) 
 					VALUES ('$nom', '$prenom', '$adresseMail', '$motDePasse', '$adresseLivraison', '$adresseFacturation')";
 	    	$pdo->exec($sql);
-	    	session_start();
-			$_SESSION['mail'] = $adresseMail;
-			$_SESSION['mdp'] = $motDePasse;
+
 		}
 	    catch(PDOException $e) {
 	    	echo $sql . "<br>" . $e->getMessage();

@@ -56,7 +56,7 @@
         <a class="link_article" href="produit?id=5">
             <div class="item_article">
                 <img src="/Projet-csi/view/assets/img/fimo5.png">
-                <p>Le flament rose</p>
+                <p>Le flamant rose</p>
             </div>
         </a>
         <a class="link_article" href="produit?id=6">
