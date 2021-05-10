@@ -18,7 +18,7 @@
 
 .product-description {
     width: 300px;
-    height: 601px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +41,7 @@
     font-size: 2rem;
 }
 .product-description p{
-    font-size: 1.75rem;
+    font-size: 1.45rem;
 }
 
 @media screen and (max-width:980px) {

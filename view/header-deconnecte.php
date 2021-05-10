@@ -19,7 +19,7 @@
         <form action="" method="post" class="form-inscription">
             <input class="form-input" type="text" placeholder="Nom" required>
             <input class="form-input" type="email" placeholder="E-mail" required>
-            <input class="form-input" type="text" placeholder="Mot de passe" required>
+            <input class="form-input" type="password" placeholder="Mot de passe" required>
             <input class="form-input" type="text" placeholder="Adresse de facturation" required>
             <button class="valider-inscription" type="submit">Inscription</button>
         </form>

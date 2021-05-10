@@ -5,7 +5,8 @@
 @import 'contact.css';
 @import 'product.css';
 @import 'panier.css';
-
+@import 'homepage.css';
+@import './espacePerso.css';
 :root {
     --primary-white-color: #FFFFFF;
     --primary-dark-color: #696969;
