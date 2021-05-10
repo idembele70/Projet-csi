@@ -19,11 +19,11 @@ function renderProduct(int $idProduct) {
     foreach ($tab_product as $row) {
         $viewProduct = array(
             'id' => $row['idProduit'],
-            'nom' => $row['ref'], 
-            'prénom' => $row['nom'], 
-            'mail' => $row['description'], 
-            'livraison' => $row['price'], 
-            'facturation' => $row['stock']
+            'ref' => $row['ref'], 
+            'nom' => $row['nom'], 
+            'description' => $row['description'], 
+            'price' => $row['price'], 
+            'stock' => $row['stock']
         );
     }
 

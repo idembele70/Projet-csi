@@ -35,7 +35,7 @@
         <img class="article-image" src="/Projet-csi/view/assets/img/item_sushi.png" alt="image d'un article ">
         <div class="product-description">
             <div class="product-title">
-                <h2><?php echo $dataProduct['id']; ?></h2>
+                <h2><?php echo $dataProduct['description']; ?></h2>
                 <h2>Nulla ex libero,</h2>
                 <h2>porta eget</h2>
             </div>
