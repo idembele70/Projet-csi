@@ -8,6 +8,7 @@
     <title>Contact</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="view/assets/img/logo-playduh-favicon.png"/>
     <link rel="stylesheet" type="text/css" href="view/css/style.css">
     <script defer src="view/js/main.js" type="text/javascript"></script>
 </head>
@@ -23,17 +24,17 @@
         }
     ?>
 
-    <section class="bg-log contact">
-        <div class="inscription-enable connexion-enable">
+    <div class="contact">
+        <div class="contact-content">
             <h1>Contactez nous</h1>
             <form action="/contact.php">
-                <input class="form-input" type="text" name="title" placeholder="Nom - Prénom">
-                <input class="form-input" type="email" name="username" placeholder="E-mail">
+                <input class="contact-input" type="text" name="title" placeholder="Nom - Prénom">
+                <input class="contact-input" type="email" name="username" placeholder="E-mail">
                 <textarea class="form-textarea" name="message" rows="12" placeholder="Message"></textarea>
                 <input class="valider-connexion" type="submit" value="Envoyer">
             </form>
         </div>
-    </section>
+    </div>
 
     <?php
         // Include footer

@@ -4,6 +4,9 @@
 header{
     background: var(--primary-orange-color);
     background-size: cover;
+    position: fixed;
+    z-index: 4;
+    width: 100%;
 }
 .header{
     display: flex;
