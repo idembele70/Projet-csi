@@ -51,11 +51,17 @@
     max-width: 100%;
     font-family: 'Josefin Sans';
     font-size: 20px;
+    transition: 0.5s;
     
+}
+
+.link_article:hover div p{
+    background-color: hsl(30, 84%, 63%);
 }
 
 #slider{
     overflow: hidden;
+    height: 100vh;
 
 }
 
