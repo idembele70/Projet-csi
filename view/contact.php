@@ -23,17 +23,17 @@
         }
     ?>
 
-    <section class="bg-log contact">
-        <div class="inscription-enable connexion-enable">
+    <div class="contact">
+        <div class="contact-content">
             <h1>Contactez nous</h1>
             <form action="/contact.php">
-                <input class="form-input" type="text" name="title" placeholder="Nom - Prénom">
-                <input class="form-input" type="email" name="username" placeholder="E-mail">
+                <input class="contact-input" type="text" name="title" placeholder="Nom - Prénom">
+                <input class="contact-input" type="email" name="username" placeholder="E-mail">
                 <textarea class="form-textarea" name="message" rows="12" placeholder="Message"></textarea>
                 <input class="valider-connexion" type="submit" value="Envoyer">
             </form>
         </div>
-    </section>
+    </div>
 
     <?php
         // Include footer
