@@ -36,11 +36,18 @@ $router->map('GET','/panier', function() {
 $router->map('GET','/espace_perso', function() {
     include('view/espacePerso.php');
 });
-// Definition espace perso route
+// Definition page 403 route
 $router->map('GET','/403', function() {
     include('view/403.php');
 });
-
+// Definition mentions légales route
+$router->map('GET','/mentions_legales', function() {
+    include('view/mentionsLegales.php');
+});
+// Definition cgv route
+$router->map('GET','/cgv', function() {
+    include('view/cgv.php');
+});
 
 // Match the route
 $match = $router->match();
