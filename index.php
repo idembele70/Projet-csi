@@ -5,6 +5,7 @@ session_start();
 // Gestion of the files
 require('model/dbConfig.php'); 
 require('model/client.php'); 
+require('model/command.php');
 require('model/renderProduct.php'); 
 require('vendor/autoload.php');
 

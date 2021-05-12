@@ -51,23 +51,74 @@
     max-width: 100%;
     font-family: 'Josefin Sans';
     font-size: 20px;
+    transition: 0.5s;
     
 }
 
+.link_article:hover div p{
+    background-color: hsl(30, 84%, 63%);
+}
+
+#slider{
+    overflow: hidden;
+    height: 100vh;
+
+}
+
+#slider figure{
+    position: relative;
+    width:500%;
+    left:0;
+    margin:0;
+    animation: 20s slider infinite;
+
+}
+#slider figure img{
+    width:20%;
+    float:left;
+
+}
+
+@keyframes slider {
+    0%{
+        left:0;
+    }
+    20%{
+        left:0;
+    }
+
+    33%{
+        left:-100%;
+    }
+    45%{
+        left:-100%;
+
+    }
+    66%{
+        left:-200%;
+    }
+    86%{
+        left:-200%;
+
+    }
+    100%{
+        left:-300%;
+    }
+}
 
 
 @media screen and (max-width: 1200px) {
-    .link_article{
+    .link_article {
         width: 50%;
         
         /*MEDIA*/
     }
-  }
+}
 
-  @media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     .link_article{
         width: 100%;
         
         /*MEDIA*/
     }
-  }
+}

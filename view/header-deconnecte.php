@@ -16,11 +16,13 @@
     <div class="register inscription-disable">
         <img src="view/assets/img/times-solid.svg" class="close-register" alt="croix fermante">
         <h1 class="inscription-title">Créer un compte</h1>
-        <form action="" method="post" class="form-inscription">
-            <input class="form-input" type="text" placeholder="Nom" required>
-            <input class="form-input" type="email" placeholder="E-mail" required>
-            <input class="form-input" type="password" placeholder="Mot de passe" required>
-            <input class="form-input" type="text" placeholder="Adresse de facturation" required>
+        <form action="model/createClient.php" method="post" class="form-inscription">
+            <input class="form-input" name="name" type="text" placeholder="Nom" required>
+            <input class="form-input" name="surname" type="text" placeholder="Prénom" required>
+            <input class="form-input" name="mail" type="email" placeholder="E-mail" required>
+            <input class="form-input" name="password" type="password" placeholder="Mot de passe" required>
+            <input class="form-input" name="livraison" type="text" placeholder="Adresse de livraison" required>
+            <input class="form-input" name="facturation" type="text" placeholder="Adresse de facturation" required>
             <button class="valider-inscription" type="submit">Inscription</button>
         </form>
     </div>

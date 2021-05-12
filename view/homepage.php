@@ -8,20 +8,30 @@
     <title>Accueil</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="view/assets/img/logo-playduh-favicon.png"/>
     <link rel="stylesheet" type="text/css" href="view/css/style.css">
     <script defer src="view/js/main.js" type="text/javascript"></script>
 </head>
 
 <body class="homepage">
+
     <?php
     // Include header
-
     if (isset($_SESSION['connected']) == true) {
         include('view/header-connecte.php');
     } else {
         include('view/header-deconnecte.php');
     }
     ?>
+
+    <div id="slider">
+        <figure>
+                <img src="view/assets/img/img_slider_home.png">
+                <img src="view/assets/img/img_slider_home_2.png">
+                <img src="view/assets/img/img_slider_home_3.png">
+                <img src="view/assets/img/img_slider_home.png">
+        </figure>
+    </div>
 
     <div class="titre_article">
         <h1>
@@ -56,7 +66,7 @@
         <a class="link_article" href="produit?id=5">
             <div class="item_article">
                 <img src="/Projet-csi/view/assets/img/fimo5.png">
-                <p>Le flament rose</p>
+                <p>Le flamant rose</p>
             </div>
         </a>
         <a class="link_article" href="produit?id=6">
@@ -66,6 +76,7 @@
             </div>
         </a>
     </div>
+
     <?php
     // Include footer
     include('view/footer.php');
