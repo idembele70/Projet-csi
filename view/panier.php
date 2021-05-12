@@ -34,7 +34,7 @@
                 </div>
             </div>-->
     </div>
-    <form class="form-panier" action="commande.php" method="post">
+    <form class="form-panier" action="model/command.php" method="post">
         <button type="submit" onclick="validerAchat()" class="valider-achat">Valider</button>
     </form>
     <?php

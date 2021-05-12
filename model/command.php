@@ -1,7 +1,6 @@
 <?php 
 
 	include 'dbConfig.php';
-
 	// Création d'une commande
 	function createCommand($idClient, $numFimo1, $numFimo2, $numFimo3, $numFimo4, $numFimo5, $numFimo6) {
 		try {

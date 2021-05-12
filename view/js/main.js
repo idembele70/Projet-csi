@@ -196,43 +196,65 @@ if (!!panier) {
   document.body.classList.toggle("body-panier");
   const panierContainer = document.querySelector(".panier");
   // affichage des differentes commande dans la page de panier
-  sessionStorage
-    .getItem("commande")
-    .split(/,/)
-    .forEach((id) => TabsPanier.push(id));
-  console.log(TabsPanier);
-  TabsPanier.forEach(
-    (id) =>
-      (panierContainer.innerHTML += `
-       <div class="article">
-      <img src="view/assets/img/fimo${id}.png" alt="image d'un article ">
-      <div class="infos">
-          <h4>Les sushi Nulla ex libero porta eget</h4>
-          <span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum doloribus maxime, eius mollitia velit ut minima delectus, placeat, eos ad. Sit, cum. Nobis ullam deleniti nesciunt ratione, unde nostrum?</span>
-          <button onClick=retirePanier(this) >Retiré du panier</button>
+  if (!!sessionStorage.getItem("commande")) {
+    sessionStorage
+      .getItem("commande")
+      .split(/,/)
+      .forEach((id) => TabsPanier.push(id));
+    console.log(TabsPanier);
+    TabsPanier.forEach(
+      (id, i) =>
+        (panierContainer.innerHTML += `
+        <div class="article">
+        <span style="opacity:0;">${i}</span>
+          <img src="view/assets/img/fimo${id}.png" alt="image d'un article ">
+          <div class="infos">
+              <h4>Les sushi Nulla ex libero porta eget</h4>
+              <span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum doloribus maxime, eius mollitia velit ut minima delectus, placeat, eos ad. Sit, cum. Nobis ullam deleniti nesciunt ratione, unde nostrum?</span>
+              <button onClick=retirePanier(this) >Retiré du panier</button>
+          </div>
       </div>
-  </div>
-      `)
-  );
+          `)
+    );
+  }
   // configuration de la taille de la page
   window.addEventListener("load", () => {
-    if (document.body.offsetWidth < 800 && document.body.offsetHeight < 600) {
-      document.body.style.minHeight = 180 + document.body.offsetHeight + "px";
+    const articles = document.querySelectorAll(".article");
+    if (
+      document.body.offsetWidth < 800 /* && document.body.offsetHeight < 600 */
+    ) {
+      document.body.style.minHeight =
+        document.body.offsetHeight +
+        (articles.length > 2 ? header.clientHeight : 0) +
+        "px";
     } else {
       document.body.style.minHeight =
-        180 + document.body.offsetHeight + footer.offsetHeight / 2 + "px";
+        document.body.offsetHeight +
+        (articles.length > 2 ? header.clientHeight : 0) +
+        "px";
     }
   });
-    // Envoyer le formulaire vers commande.php en post
-  function validerAchat(me) {
-    const formContaint = [];
-    TabsPanier.forEach((id) =>
-      formContaint.push(`input type="text" name="fimo${id}" value="1"`)
-    );
-    console.log(formContaint.join`\n`);
+  // Envoyer le formulaire vers commande.php en post
+
+  const formPanier = document.querySelector(".form-panier");
+  const formContaint = [];
+  TabsPanier.forEach((id) =>
+    formContaint.push(`<input type="hidden" name="fimo${id}" value="1">`)
+  );
+  formPanier.innerHTML += formContaint.join`\n`;
+  //   valider commande
+  function validerAchat() {
+    TabsPanier.forEach((el) => TabsPanier.pop);
+    sessionStorage.removeItem("commande");
   }
+
   function retirePanier(me) {
-      console.log(me.parentElement.parentElement.remove());
+    const articlePanier = me.parentElement.parentElement;
+    const index = Number(articlePanier.firstElementChild.textContent);
+    articlePanier.remove();
+    console.log(TabsPanier.splice(index));
+    sessionStorage.setItem("commande", TabsPanier);
+    location.reload();
   }
 }
 
