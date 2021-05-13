@@ -36,16 +36,17 @@
         <img class="article-image" src="view/assets/img/<?php echo $dataProduct['ref'];?>.png" alt="image d'un article ">
         <div class="product-description">
             <div class="product-title">
-                <h2><?php echo $dataProduct['id']; ?></h2>
                 <h2><?php echo $dataProduct['nom']; ?></h2>
                 <h2><?php echo $dataProduct['price']; ?>€</h2>
             </div>
             <span>
                 <a onclick="ajoutPanier(this)">Ajouter au panier</a>
             </span>
-            <p><strong>Stock : <?php echo $dataProduct['stock'];?></strong> <br> sit amet consectetur adipisicing elit.
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+            <p>
+                <strong>Stock : <?php echo $dataProduct['stock'];?></strong> 
+                <br> 
+                <?php echo $dataProduct['description'];?> 
+            </p>
         </div>
     </div>
 

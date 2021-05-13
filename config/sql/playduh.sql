@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  lun. 10 mai 2021 à 12:03
+-- Généré le :  jeu. 13 mai 2021 à 19:47
 -- Version du serveur :  5.7.28
 -- Version de PHP :  7.3.12
 
@@ -38,18 +38,22 @@ CREATE TABLE IF NOT EXISTS `client` (
   `adresseLivraison` varchar(255) DEFAULT NULL,
   `adresseFacturation` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idClient`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `client`
 --
 
 INSERT INTO `client` (`idClient`, `nom`, `prenom`, `adresseMail`, `password`, `adresseLivraison`, `adresseFacturation`) VALUES
-(1, 'DEMBELE', 'Ibrahim', 'ibrahim@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', 'test', 'test'),
-(2, 'GALIANA', 'Loic', 'loic@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', 'test', 'test'),
-(3, 'BERNARD', 'Manon', 'manon@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', 'test', 'test'),
-(4, 'BOSC', 'Nicolas', 'nicolas@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', 'test', 'test'),
-(5, 'BOUYGUES', 'Jonathan', 'jonathan@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', 'test', 'test');
+(1, 'DEMBELE', 'Ibrahim', 'ibrahim@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', '98, rue des Jonquilles', '98, rue des Jonquilles'),
+(2, 'GALIANA', 'Loic', 'loic@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', '54, rue des Fleurs', '54, rue des Fleurs'),
+(3, 'BERNARD', 'Manon', 'manon@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', '12, rue des Tulipes', '12, rue des Tulipes'),
+(4, 'BOSC', 'Nicolas', 'nicolas@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', '45, rue des Rosiers', '45, rue des Rosiers'),
+(5, 'BOUYGUES', 'Jonathan', 'jonathan@gmail.com', '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08', '5, rue des Coquelicots', '5, rue des Coquelicots'),
+(6, 'DIAGNE', 'Alan', 'alan@gmail.com', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', '56, avenue des Pissenlits', '56, avenue des Pissenlits'),
+(7, 'STOGREN', 'Filip', 'filip@gmail.com', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', '78, rue des Gentianes', '78, rue des Gentianes'),
+(8, 'M\'BENGUE', 'Melissa', 'melissa@gmail.com', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', '32, rue des Lilas', '32, rue des Lilas'),
+(9, 'BARTHE', 'Vincent', 'vincent@gmail.com', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', '22, rue des Oeillets', '22, rue des Oeillets');
 
 -- --------------------------------------------------------
 
@@ -65,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `commande` (
   `idClient` int(11) NOT NULL,
   PRIMARY KEY (`idCommande`),
   KEY `idClient` (`idClient`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `commande`
@@ -78,7 +82,8 @@ INSERT INTO `commande` (`idCommande`, `ref`, `dateCreation`, `idClient`) VALUES
 (4, 'Facture4', '2021-02-02', 3),
 (5, 'Facture5', '2021-02-03', 1),
 (6, 'Facture 6', '2021-03-05', 1),
-(7, 'Facture 7', '2021-03-05', 1);
+(7, 'Facture 7', '2021-03-05', 1),
+(8, 'test', '2021-05-10', 1);
 
 -- --------------------------------------------------------
 
@@ -129,12 +134,12 @@ CREATE TABLE IF NOT EXISTS `produit` (
 --
 
 INSERT INTO `produit` (`idProduit`, `ref`, `nom`, `description`, `price`, `stock`) VALUES
-(1, 'fimo1', 'Fimo Jaune', 'test', '2.01', 10),
-(2, 'fimo2', 'Fimo Vert', 'test', '3.50', 10),
-(3, 'fimo3', 'Fimo Violet', 'test', '50.00', 10),
-(4, 'fimo4', 'Fimo Noir', 'test', '35.26', 10),
-(5, 'fimo5', 'Fimo Pourpre', 'test', '38.26', 10),
-(6, 'fimo6', 'Fimo Rouge', 'test', '3.26', 10);
+(1, 'fimo1', 'Les Sushis', 'sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Test', '2.01', 10),
+(2, 'fimo2', 'Les desserts', 'sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.', '3.50', 10),
+(3, 'fimo3', 'Le pack débutant', 'sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.', '50.00', 10),
+(4, 'fimo4', 'Le panda', 'sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.', '35.26', 10),
+(5, 'fimo5', 'Le flamant rose', 'sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.', '38.26', 10),
+(6, 'fimo6', 'La licorne', 'sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.', '3.26', 10);
 
 --
 -- Contraintes pour les tables déchargées
