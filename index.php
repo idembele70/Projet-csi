@@ -9,11 +9,9 @@ require('model/command.php');
 require('model/renderProduct.php'); 
 require('vendor/autoload.php');
 
-
 // Instanciation of the object AltoRouter
 $router = new AltoRouter();
 $router->setBasePath('/Projet-csi');
-
 
 // Route's definition
 // Definition default route
@@ -49,9 +47,9 @@ $router->map('GET','/cgv', function() {
     include('view/cgv.php');
 });
 
+
 // Match the route
 $match = $router->match();
-
 
 // Call the function
 if ($match) {

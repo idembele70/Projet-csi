@@ -33,7 +33,7 @@
     ?>
 
     <div class="container-product">
-        <img class="article-image" src="/Projet-csi/view/assets/img/<?php echo $dataProduct['ref'];?>.png" alt="image d'un article ">
+        <img class="article-image" src="view/assets/img/<?php echo $dataProduct['ref'];?>.png" alt="image d'un article ">
         <div class="product-description">
             <div class="product-title">
                 <h2><?php echo $dataProduct['id']; ?></h2>

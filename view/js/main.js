@@ -48,8 +48,8 @@ hamburgerList.addEventListener(
       // afficher e404 apres avoir ferme le menu
       e404
         ? setTimeout(() => {
-            e404.style.opacity = 1;
-          }, 500)
+          e404.style.opacity = 1;
+        }, 500)
         : null;
       // mettre le header a disable
       header.classList.remove("header-enable");
@@ -172,7 +172,7 @@ if (!!e404) {
 }
 // Go To home page
 logo.onclick = function () {
-  location.href = "/projet-csi/";
+  location.href = "./";
 };
 
 // Product
@@ -203,7 +203,7 @@ if (!!panier) {
   console.log(TabsPanier);
   TabsPanier.forEach(
     (id) =>
-      (panierContainer.innerHTML += `
+    (panierContainer.innerHTML += `
        <div class="article">
       <img src="view/assets/img/fimo${id}.png" alt="image d'un article ">
       <div class="infos">
@@ -223,7 +223,7 @@ if (!!panier) {
         180 + document.body.offsetHeight + footer.offsetHeight / 2 + "px";
     }
   });
-    // Envoyer le formulaire vers commande.php en post
+  // Envoyer le formulaire vers commande.php en post
   function validerAchat(me) {
     const formContaint = [];
     TabsPanier.forEach((id) =>
@@ -232,7 +232,7 @@ if (!!panier) {
     console.log(formContaint.join`\n`);
   }
   function retirePanier(me) {
-      console.log(me.parentElement.parentElement.remove());
+    console.log(me.parentElement.parentElement.remove());
   }
 }
 

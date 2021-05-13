@@ -28,9 +28,9 @@
         <div class="contact-content">
             <h1>Contactez nous</h1>
             <form action="/contact.php">
-                <input class="contact-input" type="text" name="title" placeholder="Nom - Prénom">
-                <input class="contact-input" type="email" name="username" placeholder="E-mail">
-                <textarea class="form-textarea" name="message" rows="12" placeholder="Message"></textarea>
+                <input class="contact-input" type="text" name="title" placeholder="Nom - Prénom" required>
+                <input class="contact-input" type="email" name="username" placeholder="E-mail" required>
+                <textarea class="form-textarea" name="message" rows="12" placeholder="Message" required></textarea>
                 <input class="valider-connexion" type="submit" value="Envoyer">
             </form>
         </div>
