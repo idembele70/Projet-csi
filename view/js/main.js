@@ -183,7 +183,14 @@ if (!!ContainerProduit) {
 if (!!panier) {
   document.body.classList.toggle("body-panier");
   const panierContainer = document.querySelector(".panier");
-
+  const btnValiderAchat = document.querySelector(".valider-achat");
+  
+  if (sessionStorage.getItem('commande') ) {
+    btnValiderAchat.style.display = 'initial';
+  } else {
+    console.log('not in');
+    btnValiderAchat.style.display = 'none'
+  }
   // affichage des differentes commande dans la page de panier
   if (!!sessionStorage.getItem("commande")) {
     sessionStorage
