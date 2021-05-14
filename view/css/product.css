@@ -1,13 +1,14 @@
-.body-product{
-    position: relative;
+.body-product {
+  position: relative;
+  z-index: -1;
 }
 
-.container-product{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: -1;
-    margin-top: 130px;
+.container-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  margin-top: 130px;
 }
 
 .article-image {

@@ -155,7 +155,7 @@ logo.onclick = function () {
 if (!!ContainerProduit) {
   const btnAjoutPanier = document.querySelector(".ajoutPanier");
   if (btnConnexion) btnAjoutPanier.disabled = true;
-  else btnAjoutPanier.disabled = false;
+  else btnAjoutPanier.disabled = false; 
 
   document.body.classList.toggle("body-product");
   function ajoutPanier() {
