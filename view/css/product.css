@@ -47,6 +47,17 @@
   font-size: 1.45rem;
 }
 
+.valider-commande{
+  position: absolute;
+  background: var(--primary-orange-color);
+  color: white;
+  bottom: 100px;
+  font-size: 1.4rem;
+  padding: 10px;
+  opacity: 0;
+}
+
+
 @media screen and (max-width: 980px) {
   .article-image {
     max-height: 60%;

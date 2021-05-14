@@ -48,8 +48,10 @@
                 <?php echo $dataProduct['description'];?> 
             </p>
         </div>
+        <div class="valider-commande" >
+            Commande Valider
+        </div>
     </div>
-
     <?php
     // include footer;
     include 'footer.php';

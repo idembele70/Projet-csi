@@ -170,6 +170,11 @@ if (!!ContainerProduit) {
       sessionStorage.setItem("commande", TabsPanier);
     }
     while (TabsPanier.length > 0) TabsPanier.pop();
+    const popUpValiderComande = document.querySelector('.valider-commande')
+    popUpValiderComande.style.opacity = 1;
+    setTimeout(() => {
+      popUpValiderComande.style.opacity = 0;
+    }, 2000);
   }
 }
 
