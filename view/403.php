@@ -27,7 +27,7 @@
     <div class="e404">
         <h2 class="e404-title">403</h2>
         <p>page interdite</p>
-        <a href="/">Retour à l'accueil</a>
+        <a href="./">Retour à l'accueil</a>
     </div>
     
     <?php

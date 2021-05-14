@@ -48,11 +48,11 @@
   margin: 0 0 20px;
 }
 
-
 .contact div form input.valider-connexion {
   float: right;
-  margin-top: 20px;
+  margin: 5px 0;
 }
+
 .valider-achat {
   position: absolute;
   bottom: 80px;

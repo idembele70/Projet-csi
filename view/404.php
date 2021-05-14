@@ -30,7 +30,7 @@ faire un timeout qui redirige vers la page d'accueil.
     <div class="e404">
         <h2 class="e404-title">404</h2>
         <p>page non trouvée</p>
-        <a href="/">Retour à l'accueil</a>
+        <a href="./">Retour à l'accueil</a>
     </div>
     
     <?php
