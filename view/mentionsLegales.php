@@ -13,7 +13,7 @@
 </head>
 
 
-<body>
+<body class="mentionsLegales">
     <?php
         // Include header
         if(isset($_SESSION['connected']) == true) {
@@ -23,9 +23,9 @@
         }
     ?>
     <div id="containerMention">
-    <div>
-        <h2>Mentions légales</h2>
-    </div>
+        <div>
+            <h2>Mentions légales</h2>
+        </div>
         <div id="mentionsArticle">
             <div id="editeur">
                 <p>

@@ -48,6 +48,8 @@ $router->map('GET','/cgv', function() {
 });
 
 
+// var_dump($_SERVER);
+
 // Match the route
 $match = $router->match();
 

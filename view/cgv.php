@@ -13,7 +13,7 @@
     <script defer src="view/js/main.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body class="cgv">
     <?php
         // Include header
         if(isset($_SESSION['connected']) == true) {
