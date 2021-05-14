@@ -155,7 +155,7 @@ logo.onclick = function () {
 if (!!ContainerProduit) {
   const btnAjoutPanier = document.querySelector(".ajoutPanier");
   if (btnConnexion) btnAjoutPanier.disabled = true;
-  else btnAjoutPanier.disabled = false; 
+  else btnAjoutPanier.disabled = false;
 
   document.body.classList.toggle("body-product");
   function ajoutPanier() {
@@ -183,6 +183,7 @@ if (!!ContainerProduit) {
 if (!!panier) {
   document.body.classList.toggle("body-panier");
   const panierContainer = document.querySelector(".panier");
+
   // affichage des differentes commande dans la page de panier
   if (!!sessionStorage.getItem("commande")) {
     sessionStorage
@@ -192,7 +193,7 @@ if (!!panier) {
     console.log(TabsPanier);
     TabsPanier.forEach(
       (id, i) =>
-        (panierContainer.innerHTML += `
+      (panierContainer.innerHTML += `
         <div class="article">
         <span style="opacity:0;">${i}</span>
           <img src="view/assets/img/fimo${id}.png" alt="image d'un article ">
