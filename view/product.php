@@ -49,7 +49,7 @@
             </p>
         </div>
         <div class="valider-commande" >
-            Commande Valider
+            Item ajouté au panier
         </div>
     </div> 
     <?php

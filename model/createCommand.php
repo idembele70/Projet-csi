@@ -1,28 +1,18 @@
 <?php
 
 // Include function client
-include 'client.php';
+include 'command.php';
 // start the session
 session_start();
-
-var_dump($_SESSION[0]);
 // Verification
-if (true) {
-
-
-
-    // Securization of data
-    $name = (string) trim(htmlspecialchars($_POST["name"]));
-        $surname = (string) trim(htmlspecialchars($_POST["surname"]));
-    $mail = (string) trim(htmlspecialchars($_POST["mail"]));
-    $password = (string) trim(htmlspecialchars($_POST["password"]));
-    $livraison = (string) trim(htmlspecialchars($_POST["livraison"]));
-    $facturation = (string) trim(htmlspecialchars($_POST["facturation"]));
-
+if ($_POST && $_SESSION) {
+    // Create data
+    $nameId = (int) $_SESSION['id'];
+    $data = (array) $_POST;
     // Call the function createClient
-    createClient($name, $surname, $mail, $password, $livraison, $facturation);
+    createCommand($nameId, $data);
 }
 // Back to the attente.php
-// header('Location: ../');
+header('Location: ../');
 
 ?>
