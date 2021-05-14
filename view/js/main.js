@@ -265,11 +265,5 @@ if (!!espacePerso) {
 // Page Contact
 if (!!contact) {
   // 180 equivaut a la hauter du header
-  document.body.onload = () => {
-    contact.style.height =
-      document.body.offsetHeight -
-      header.clientHeight -
-      footer.offsetHeight +
-      "px";
-  };
+  document.body.classList.add('body-contact')
 }
