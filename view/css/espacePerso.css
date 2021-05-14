@@ -1,6 +1,11 @@
 .espacePerso {
     background: rgba(0, 0, 0, 0.178);
     background: var(--primary-darken-orange-color);
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 main {
     display: flex;
