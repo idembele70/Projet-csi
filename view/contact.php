@@ -25,7 +25,7 @@
     ?>
 
     <div class="contact">
-        <div class="contact-content">
+        <div class="contact-form">
             <h1>Contactez nous</h1>
             <form action="/contact.php">
                 <input class="contact-input" type="text" name="title" placeholder="Nom - Prénom">

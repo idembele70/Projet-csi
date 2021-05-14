@@ -41,7 +41,7 @@
                 <h2><?php echo $dataProduct['price']; ?>€</h2>
             </div>
             <span>
-                <a onclick="ajoutPanier(this)">Ajouter au panier</a>
+                <button class="ajoutPanier" onclick="ajoutPanier()">Ajouter au panier</button>
             </span>
             <p><strong>Stock : <?php echo $dataProduct['stock'];?></strong> <br> sit amet consectetur adipisicing elit.
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.

@@ -177,16 +177,23 @@ logo.onclick = function () {
 
 // Product
 if (!!ContainerProduit) {
+  const btnAjoutPanier = document.querySelector(".ajoutPanier");
+  if (btnConnexion) btnAjoutPanier.disabled = true;
+  else btnAjoutPanier.disabled = false;
+
   document.body.classList.toggle("body-product");
-  function ajoutPanier(me) {
-    TabsPanier.push(document.location.search.replace(/\D/g, ""));
+  function ajoutPanier() {
+    TabsPanier.unshift(document.location.search.replace(/\D/g, ""));
     if (sessionStorage.getItem("commande")) {
       const item = sessionStorage.getItem("commande").trim().split(",");
-      item.forEach((id) => TabsPanier.unshift(id));
+      console.log("item", item);
+      item.forEach((id) => TabsPanier.push(id));
+      console.log("tabs Panier", TabsPanier);
       sessionStorage.setItem("commande", TabsPanier);
     } else {
       sessionStorage.setItem("commande", TabsPanier);
     }
+    while (TabsPanier.length > 0) TabsPanier.pop();
   }
 }
 
@@ -252,7 +259,7 @@ if (!!panier) {
     const articlePanier = me.parentElement.parentElement;
     const index = Number(articlePanier.firstElementChild.textContent);
     articlePanier.remove();
-    console.log(TabsPanier.splice(index));
+    TabsPanier.splice(index, 1);
     sessionStorage.setItem("commande", TabsPanier);
     location.reload();
   }
@@ -293,5 +300,13 @@ if (!!contact) {
       header.clientHeight -
       footer.offsetHeight +
       "px";
+    const formTarea = document.body.querySelector(".form-textarea");
+    if (document.body.clientWidth < 800) {
+      formTarea.setAttribute("rows", "4");
+    }
+    if (document.body.clientWidth < 600) {
+      const h1Tag = contact.querySelector("h1");
+      h1Tag.style.marginTop = `${15}px`;
+    }
   };
 }

@@ -3,6 +3,7 @@
   /* height: 100vh; */
   width: 100vw;
   margin-bottom: 10px;
+  padding-top: 120px;
 }
 .contact-content {
   width: 100vw;
@@ -29,6 +30,12 @@
 .contact .inscription-enable,
 .contact .connexion-enable {
   animation: opacityin 0ms;
+}
+
+.contact-form {
+  width: 50%;
+  max-width: 600px;
+  margin: auto;
 }
 
 .contact-input {
@@ -64,8 +71,8 @@
   font-size: 20px;
   cursor: pointer;
 }
-@media screen and (max-width:800px) {
-    .valider-achat {
-        bottom: 205px;
-      }
+@media screen and (max-width: 800px) {
+  .valider-achat {
+    bottom: 205px;
+  }
 }
