@@ -51,7 +51,7 @@
         <div class="valider-commande" >
             Commande Valider
         </div>
-    </div>
+    </div> 
     <?php
     // include footer;
     include 'footer.php';
