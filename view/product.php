@@ -40,7 +40,7 @@
                 <h2><?php echo $dataProduct['price']; ?>€</h2>
             </div>
             <span>
-                <a onclick="ajoutPanier(this)">Ajouter au panier</a>
+                <button class="ajoutPanier" onclick="ajoutPanier()">Ajouter au panier</button>
             </span>
             <p>
                 <strong>Stock : <?php echo $dataProduct['stock'];?></strong> 
@@ -48,8 +48,10 @@
                 <?php echo $dataProduct['description'];?> 
             </p>
         </div>
-    </div>
-
+        <div class="valider-commande" >
+            Commande Valider
+        </div>
+    </div> 
     <?php
     // include footer;
     include 'footer.php';

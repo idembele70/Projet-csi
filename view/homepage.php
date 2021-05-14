@@ -33,11 +33,10 @@
         </figure>
     </div>
 
-    <div class="titre_article">
-        <h1>
+
+        <h1 class="titre_article">
             Les Articles
         </h1>
-    </div>
     <div class="container_article_item">
         <a class="link_article" href="produit?id=1">
             <div class="item_article">

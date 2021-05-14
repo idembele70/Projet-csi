@@ -1,131 +1,143 @@
-.body-product{
-    position: relative;
+.body-product {
+  position: relative;
+  z-index: -1;
 }
 
-.container-product{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: -1;
-    margin-top: 130px;
+.container-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  margin-top: 130px;
 }
 
-.article-image{
-   max-height: 80%;
-    margin-right: 30px;
+.article-image {
+  max-height: 80%;
+  margin-right: 30px;
 }
 
 .product-description {
-    width: 300px;
-    height: 500px;
-    display: flex;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-title {
+  margin-bottom: 40px;
+}
+.product-description h2 {
+  margin: 10px 0;
+  font-size: 2.5rem;
+  color: var(--primary-orange-color);
+}
+.product-description button {
+  text-decoration: none;
+  color: white;
+  background: var(--primary-orange-color);
+  padding: 10px;
+  margin-bottom: 10px;
+  line-height: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.product-description p {
+  font-size: 1.45rem;
+}
+
+.valider-commande{
+  position: absolute;
+  background: var(--primary-orange-color);
+  color: white;
+  bottom: 100px;
+  font-size: 1.4rem;
+  padding: 10px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+
+@media screen and (max-width: 980px) {
+  .article-image {
+    max-height: 60%;
+  }
+  .product-description h2 {
+    font-size: 1.8rem;
+  }
+  .product-description button {
+    font-size: 1.2rem;
+  }
+  .product-description p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container-product {
+    position: absolute;
     flex-direction: column;
-    justify-content: center;
-}
-.product-title{
-    margin-bottom: 40px;
-}
-.product-description h2{
-    margin: 10px 0;
-    font-size: 2.5rem;
+    top: 120px;
+    bottom: 185px;
+    height: auto;
+    width: 100%;
+  }
+
+  .article-image {
+    max-height: 40%;
+  }
+  .product-description {
+    height: 100%;
+  }
+  .product-title {
+    margin-bottom: 4px;
+  }
+  .product-description h2 {
+    font-size: 1.2rem;
     color: var(--primary-orange-color);
-}
-.product-description a {
+  }
+  .product-description button {
     text-decoration: none;
     color: white;
     background: var(--primary-orange-color);
     padding: 10px;
     margin-bottom: 10px;
-    line-height: 30px;
-    font-size: 2rem;
-    cursor: pointer;
+    line-height: 15px;
+    font-size: 1rem;
+  }
+  .product-description p {
+    font-size: 1.1rem;
+  }
+  @media screen and (max-height: 770px) {
+    .body-product {
+      min-height: 770px;
+    }
+  }
 }
-.product-description p{
-    font-size: 1.45rem;
-}
-
-@media screen and (max-width:980px) {
-    .article-image{
-        max-height: 60%;
-    }
-    .product-description h2{
-        font-size: 1.8rem;
-
-    }
-    .product-description a {
-        font-size: 1.2rem;
-    }
-    .product-description p{
-        font-size: 1.2rem;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .container-product{
-        position: absolute;
-        flex-direction: column;
-        top: 120px;
-        bottom: 185px;
-        height: auto;
-        width: 100%;
-    }
-    
-    
-    .article-image{
-        max-height: 40%;
-    }
-    .product-description {
-        height:100%;
-    }
-    .product-title{
-        margin-bottom: 40px;
-    }
-    .product-description h2{
-        font-size: 1.4rem;
-        color: var(--primary-orange-color);
-    }
-    .product-description a {
-        text-decoration: none;
-        color: white;
-        background: var(--primary-orange-color);
-        padding: 10px;
-        margin-bottom: 10px;
-        line-height: 15px;
-        font-size: 1rem;
-    }
-    .product-description p{
-        font-size: 1.1rem;
-    }
-    @media screen and (max-height: 770px) {
-        .body-product {
-           min-height: 770px;
-        }
-    }
-}
-
 
 @media screen and (min-width: 1600px) {
-.article-image{
+  .article-image {
     height: 40vh;
-}
-.product-description {
+  }
+  .product-description {
     width: 30%;
     height: 70%;
-}
-.product-title{
+  }
+  .product-title {
     margin-bottom: 40px;
-}
-.product-description h2{
+  }
+  .product-description h2 {
     margin: 10px 0;
     font-size: 2.5em;
     color: var(--primary-orange-color);
-}
-.product-description a {
+  }
+  .product-description button {
     font-size: 1.4rem;
-}
-.product-description p{
+  }
+  .product-description p {
     max-width: 500px;
     font-size: 1rem;
     text-align: justify;
-}
+  }
 }
