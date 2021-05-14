@@ -3,9 +3,6 @@
     background: var(--primary-darken-orange-color);
     position: relative;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 main {
     display: flex;
