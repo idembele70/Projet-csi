@@ -7,6 +7,9 @@
 @import 'panier.css';
 @import 'homepage.css';
 @import './espacePerso.css';
+@import 'cgv.css';
+@import 'mentionsLegales.css';
+
 :root {
     --primary-white-color: #FFFFFF;
     --primary-dark-color: #696969;
