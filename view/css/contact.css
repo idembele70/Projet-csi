@@ -23,6 +23,7 @@
 }
 
 .form-textarea {
+  box-sizing: border-box;
   width: 100%;
   border-radius: 0;
   outline: none;
@@ -47,9 +48,6 @@
   margin: 0 0 20px;
 }
 
-/* .contact div form {
-   margin-top: 40px; 
-} */
 
 .contact div form input.valider-connexion {
   float: right;
