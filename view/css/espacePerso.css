@@ -1,28 +1,37 @@
 .espacePerso {
-    background: rgba(0, 0, 0, 0.178);
-    background: var(--primary-darken-orange-color);
+  background: rgba(0, 0, 0, 0.178);
+  background: var(--primary-darken-orange-color);
 }
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+}
+.h1-profil {
+    color: white;
 }
 main > form {
-    width: 50%;
-    min-width: 304px;
-    max-width: 485px;
-    display: flex;
-    flex-direction: column;
+  width: 50%;
+  min-width: 304px;
+  max-width: 485px;
+  display: flex;
+  flex-direction: column;
 }
-form input {
-height: 30px;
-margin: 10px;
+.line-info {
+    margin: auto;
+  width: 395px;
+  line-height: 30px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding: 3px;
+  background: #efefef;
 }
 h1 {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
-@media screen and (min-width:1440px) {
-    h1 {
-        margin-top: 9rem;
-    }
+@media screen and (min-width: 1440px) {
+  h1 {
+    margin-top: 9rem;
+  }
 }

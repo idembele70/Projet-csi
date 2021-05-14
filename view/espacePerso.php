@@ -31,12 +31,12 @@ if (!isset($_SESSION['connected'])) {
     $data = renderPerso($_SESSION['id']);
     ?>
     <main>
-        <h1>Profil</h1>
-        <div><?php var_dump($data); ?></div>
+        <h1 class="h1-profil">Profil</h1>
         <form>
-            <input type='text' placeholder="Nom" name="nom" id="nom" disabled>
-            <input type='email' placeholder="E-mail" name="email" id="email" disabled>
-            <input type='text' placeholder="Adresse de facturation" name="adresse" id="adresse" disabled>
+            <div class="line-info">Nom:&nbsp;<?php echo $data['nom']?></div>
+            <div class="line-info">Prénom :&nbsp;<?php echo $data['prénom']?></div>
+            <div class="line-info">Mail :&nbsp;<?php echo $data['mail']?></div>
+            <div class="line-info">Adresse :&nbsp;<?php echo $data['livraison']?></div>
         </form>
     </main>
     <?php
