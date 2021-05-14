@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="view/assets/img/logo-playduh-favicon.png"/>
-    <link rel="stylesheet" type="text/css" href="http://localhost/Projet-csi/view/css/style.css">
-    <script defer src="http://localhost/Projet-csi/view/js/main.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="view/css/style.css">
+    <script defer src="view/js/main.js" type="text/javascript"></script>
 </head>
 
 <!-- 
@@ -30,7 +30,7 @@ faire un timeout qui redirige vers la page d'accueil.
     <div class="e404">
         <h2 class="e404-title">404</h2>
         <p>page non trouvée</p>
-        <a href="/Projet-csi/">Retour à l'accueil</a>
+        <a href="/">Retour à l'accueil</a>
     </div>
     
     <?php

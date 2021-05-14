@@ -1,8 +1,4 @@
 footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
     background:var(--secondary-dark-color);
     color: var(--primary-white-color);
     min-width: 320px;
@@ -23,6 +19,16 @@ footer {
     color: white;
 
 }
+
+.footer-un h3 a {
+    text-decoration: none;
+    color: white;
+}
+.footer-deux h3 a {
+    text-decoration: none;
+    color: white;
+}
+
 [class*='footer-'] h3{
     padding-bottom: 5px;
     text-align: center;

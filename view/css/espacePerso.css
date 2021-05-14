@@ -1,6 +1,8 @@
 .espacePerso {
-  background: rgba(0, 0, 0, 0.178);
-  background: var(--primary-darken-orange-color);
+    background: rgba(0, 0, 0, 0.178);
+    background: var(--primary-darken-orange-color);
+    position: relative;
+    height: 100vh;
 }
 main {
   display: flex;
@@ -34,4 +36,9 @@ h1 {
   h1 {
     margin-top: 9rem;
   }
+}
+@media screen and (min-width:1440px) {
+    h1 {
+        margin-top: 50px;
+    }
 }

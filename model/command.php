@@ -35,6 +35,7 @@
 	}
 	
 
+
 	// Connexion client
 	// function verifClient($adresseMail, $motDePasse) { //En paramètre les données récupérées du formulaire de connexion
 	// 	try{

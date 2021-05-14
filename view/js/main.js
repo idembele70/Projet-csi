@@ -48,8 +48,8 @@ hamburgerList.addEventListener(
       // afficher e404 apres avoir ferme le menu
       e404
         ? setTimeout(() => {
-            e404.style.opacity = 1;
-          }, 500)
+          e404.style.opacity = 1;
+        }, 500)
         : null;
       // mettre le header a disable
       header.classList.remove("header-enable");
@@ -172,7 +172,7 @@ if (!!e404) {
 }
 // Go To home page
 logo.onclick = function () {
-  location.href = "/projet-csi/";
+  location.href = "./";
 };
 
 // Product
@@ -294,19 +294,5 @@ if (!!espacePerso) {
 // Page Contact
 if (!!contact) {
   // 180 equivaut a la hauter du header
-  document.body.onload = () => {
-    contact.style.height =
-      document.body.offsetHeight -
-      header.clientHeight -
-      footer.offsetHeight +
-      "px";
-    const formTarea = document.body.querySelector(".form-textarea");
-    if (document.body.clientWidth < 800) {
-      formTarea.setAttribute("rows", "4");
-    }
-    if (document.body.clientWidth < 600) {
-      const h1Tag = contact.querySelector("h1");
-      h1Tag.style.marginTop = `${15}px`;
-    }
-  };
+  document.body.classList.add('body-contact')
 }

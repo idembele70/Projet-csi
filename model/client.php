@@ -6,12 +6,22 @@
 	function createClient($nom, $prenom, $adresseMail, $motDePasse, $adresseLivraison, $adresseFacturation) {
 		try {
 			global $pdo;
-			
+			// Hashage du mot de passe
 			$motDePasse = hash("sha256", $motDePasse);
+			// Prepare the request
 			$sql = "INSERT INTO client (nom, prenom, adresseMail, password, adresseLivraison, adresseFacturation) 
-					VALUES ('$nom', '$prenom', '$adresseMail', '$motDePasse', '$adresseLivraison', '$adresseFacturation')";
-	    	$pdo->exec($sql);
-
+					VALUES (:nom, :prenom, :adresseMail, :motDePasse, :adresseLivraison, :adresseFacturation)";
+			// Target to send
+			$modele = $pdo->prepare($sql);
+			// Bind Value
+			$modele->bindParam('nom', $nom);
+			$modele->bindParam('prenom', $prenom);
+			$modele->bindParam('adresseMail', $adresseMail);
+			$modele->bindParam('motDePasse', $motDePasse);
+			$modele->bindParam('adresseLivraison', $adresseLivraison);
+			$modele->bindParam('adresseFacturation', $adresseFacturation);
+			// Send the request
+			$modele->execute();
 		}
 	    catch(PDOException $e) {
 	    	echo $sql . "<br>" . $e->getMessage();
