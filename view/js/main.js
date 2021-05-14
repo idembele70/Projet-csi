@@ -81,29 +81,6 @@ if (!!btnInscription) {
     bgLog.classList.add("bg-log-enable");
     bgLog.removeAttribute("style");
   };
-  /* Gestion du formulaire d'inscription et de connexion avec des Regex
-        STOP
-        */
-
-  /*  const inputs = bgLog.querySelectorAll('input');
-    const validerIncription = bgLog.querySelector('.valider-inscription')
-    let isNull = true;
-    addEventListener('input', () => {
-        isNull = false;
-        inputs.forEach(input => {
-            if (input.value == '') isNull = true;
-        })
-        console.log(validerIncription);
-        if (isNull) {
-            validerIncription.disabled = isNull;
-        } else {
-            console.log(isNull);
-            validerIncription.disabled = isNull;
-            
-        }
-    }) */
-
-  // STOP
 }
 // div connexion
 // close inscription & connexion
@@ -168,7 +145,6 @@ if (!!e404) {
       header.clientHeight +
       "px";
   }, 200);
-  console.log("it's true");
 }
 // Go To home page
 logo.onclick = function () {
