@@ -48,8 +48,8 @@ hamburgerList.addEventListener(
       // afficher e404 apres avoir ferme le menu
       e404
         ? setTimeout(() => {
-          e404.style.opacity = 1;
-        }, 500)
+            e404.style.opacity = 1;
+          }, 500)
         : null;
       // mettre le header a disable
       header.classList.remove("header-enable");
@@ -170,11 +170,14 @@ if (!!ContainerProduit) {
       sessionStorage.setItem("commande", TabsPanier);
     }
     while (TabsPanier.length > 0) TabsPanier.pop();
-    const popUpValiderComande = document.querySelector('.valider-commande')
+    const popUpValiderComande = document.querySelector(".valider-commande");
     popUpValiderComande.style.opacity = 1;
     setTimeout(() => {
       popUpValiderComande.style.opacity = 0;
     }, 2000);
+    setTimeout(() => {
+      location.href = "/Projet-csi";
+    }, 2500);
   }
 }
 
@@ -184,12 +187,12 @@ if (!!panier) {
   document.body.classList.toggle("body-panier");
   const panierContainer = document.querySelector(".panier");
   const btnValiderAchat = document.querySelector(".valider-achat");
-  
-  if (sessionStorage.getItem('commande') ) {
-    btnValiderAchat.style.display = 'initial';
+
+  if (sessionStorage.getItem("commande")) {
+    btnValiderAchat.style.display = "initial";
   } else {
-    console.log('not in');
-    btnValiderAchat.style.display = 'none'
+    console.log("not in");
+    btnValiderAchat.style.display = "none";
   }
   // affichage des differentes commande dans la page de panier
   if (!!sessionStorage.getItem("commande")) {
@@ -200,7 +203,7 @@ if (!!panier) {
     console.log(TabsPanier);
     TabsPanier.forEach(
       (id, i) =>
-      (panierContainer.innerHTML += `
+        (panierContainer.innerHTML += `
         <div class="article">
         <span style="opacity:0;">${i}</span>
           <img src="view/assets/img/fimo${id}.png" alt="image d'un article ">
@@ -283,5 +286,5 @@ if (!!espacePerso) {
 // Page Contact
 if (!!contact) {
   // 180 equivaut a la hauter du header
-  document.body.classList.add('body-contact')
+  document.body.classList.add("body-contact");
 }
