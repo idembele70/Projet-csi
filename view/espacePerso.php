@@ -36,9 +36,11 @@ if (!isset($_SESSION['connected'])) {
             <div class="line-info">Nom:&nbsp;<?php echo $data['nom']?></div>
             <div class="line-info">Prénom :&nbsp;<?php echo $data['prénom']?></div>
             <div class="line-info">Mail :&nbsp;<?php echo $data['mail']?></div>
-            <div class="line-info">Adresse :&nbsp;<?php echo $data['livraison']?></div>
+            <div class="line-info">Adresse de livraison :&nbsp;<?php echo $data['livraison']?></div>
+            <div class="line-info">Adresse de facturation :&nbsp;<?php echo $data['facturation']?></div>
         </form>
     </main>
+    
     <?php
     // Include footer
     include('view/footer.php');

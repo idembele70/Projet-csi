@@ -31,7 +31,8 @@
             <div id = "cgvArticle1">
                 <p>
                     Date de dernière mise à jour 12/05/2021
-
+                </p>
+                <p>
                     <b>Article 1 - Objet</b></br>
 
                     Les présentes conditions régissent les ventes par la société ORT_ELEVE de pate fimo. 

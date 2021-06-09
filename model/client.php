@@ -14,12 +14,12 @@
 			// Target to send
 			$modele = $pdo->prepare($sql);
 			// Bind Value
-			$modele->bindParam('nom', $nom);
-			$modele->bindParam('prenom', $prenom);
-			$modele->bindParam('adresseMail', $adresseMail);
-			$modele->bindParam('motDePasse', $motDePasse);
-			$modele->bindParam('adresseLivraison', $adresseLivraison);
-			$modele->bindParam('adresseFacturation', $adresseFacturation);
+			$modele->bindParam('nom', $nom, PDO::PARAM_STR);
+			$modele->bindParam('prenom', $prenom, PDO::PARAM_STR);
+			$modele->bindParam('adresseMail', $adresseMail, PDO::PARAM_STR);
+			$modele->bindParam('motDePasse', $motDePasse, PDO::PARAM_STR);
+			$modele->bindParam('adresseLivraison', $adresseLivraison, PDO::PARAM_STR);
+			$modele->bindParam('adresseFacturation', $adresseFacturation, PDO::PARAM_STR);
 			// Send the request
 			$modele->execute();
 		}
@@ -35,20 +35,21 @@
 			$adresseMail = (string) $adresseMail;
 			$motDePasse = (string) hash("sha256", $motDePasse);
 			// Request to send
-			$requete = "SELECT idClient, adresseMail, password from client where adresseMail = '$adresseMail' and `password` = '$motDePasse'";
-			$resultat_compte = $pdo->query($requete);
+			$requete = "SELECT idClient, adresseMail, password from client where adresseMail = :adresseMail and `password` = :motDePasse";
+			// Target to send
+			$modele = $pdo->prepare($requete);
+			// Bind Value
+			$modele->bindParam('adresseMail', $adresseMail, PDO::PARAM_STR);
+			$modele->bindParam('motDePasse', $motDePasse, PDO::PARAM_STR);
+			// Send the request
+			$modele->execute();
 			// Formatting the datas for analogy
-			$tab_compte = $resultat_compte->fetchAll(PDO::FETCH_ASSOC);
-			// DB's deconnection
-			if (isset($con)) {
-				unset($con);
-			}
+			$tab_compte = $modele->fetch(PDO::FETCH_ASSOC);
 			// Test if it's client
 			if (!empty($tab_compte)) {
 				// is client
-				$_SESSION['id'] = (int) $tab_compte[0]['idClient'];
-				$_SESSION['mail'] = (string) $tab_compte[0]['adresseMail'];
-				$_SESSION['password'] = (string) $tab_compte[0]['password'];
+				$_SESSION['id'] = (int) $tab_compte['idClient'];
+				$_SESSION['mail'] = (string) $tab_compte['adresseMail'];
 				$_SESSION['connected'] = (bool) true;
 			}
 		}
@@ -93,28 +94,37 @@
 	    }
 	}
 
+	// Get the data of the client
 	function renderPerso(int $persoAct) {
 
 		global $pdo;
 		$viewPerso = [];
 
-		$query = (string) "SELECT * FROM client WHERE idClient = $persoAct";
+		$query = (string) "SELECT * FROM client WHERE idClient = :persoAct";
 
 		try {
-			$result_client = $pdo->query($query);
-			$tab_client = $result_client->fetchAll(PDO::FETCH_ASSOC);
-		} catch(Exception $erreur) {
+			// Target to send
+			$modele = $pdo->prepare($query);
+			// Bind Value
+			$modele->bindParam('persoAct', $persoAct, PDO::PARAM_INT);
+			// Send the request
+			$modele->execute();
+			// Formatting the datas for analogy
+			$tab_client = $modele->fetch(PDO::FETCH_ASSOC);			
+		} 
+		catch(Exception $erreur) {
 			exit('Problème de connexion à la DB.'.$erreur);
 		}
 
-		foreach ($tab_client as $row) {
+		// Test the presence
+		if (!empty($tab_client)) {
 			$viewPerso = array(
-				'id' => $row['idClient'],
-				'nom' => $row['nom'], 
-				'prénom' => $row['prenom'], 
-				'mail' => $row['adresseMail'], 
-				'livraison' => $row['adresseLivraison'], 
-				'facturation' => $row['adresseFacturation']
+				'id' => $tab_client['idClient'],
+				'nom' => $tab_client['nom'], 
+				'prénom' => $tab_client['prenom'], 
+				'mail' => $tab_client['adresseMail'], 
+				'livraison' => $tab_client['adresseLivraison'], 
+				'facturation' => $tab_client['adresseFacturation']
 			);
 		}
 

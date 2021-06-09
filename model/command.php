@@ -6,14 +6,19 @@
 		try {
 
 			global $pdo;
-			// Get the last commande
+			// Get the last command
 			$lastIntCommand = renderLastCommand() + 1; 
 			$lastStringCommand = 'Facture'.strval($lastIntCommand);
 			
 			// Table Commande
 			$sqlCommand = (string) "INSERT INTO commande (ref, dateCreation, idClient) 
-					VALUES ('$lastStringCommand', NOW(), $nameId)";
-	    	$pdo->exec($sqlCommand);
+					VALUES (:lastStringCommand, NOW(), :nameId)";
+			$modele = $pdo->prepare($sqlCommand);
+			// Bind Value
+			$modele->bindParam('lastStringCommand', $lastStringCommand, PDO::PARAM_STR);
+			$modele->bindParam('nameId', $nameId, PDO::PARAM_INT);
+			// Send the request
+			$modele->execute();
 			
 			// Table contenir
 			$sqlContenir = (string) "INSERT INTO contenir (idCommande, idProduit, nbreProduit) VALUES";
@@ -25,7 +30,7 @@
 				if ($lap != 1) {
 					$sqlContenir .= ',';
 				}
-				// inject data.
+				// Inject data.
 				$keySplit = preg_split("/fimo/", $key);
 				$sqlContenir .= '('.$lastIntCommand.', '.$keySplit[1].', '.$value.')';
 				// Add a loop
@@ -66,7 +71,6 @@
 		return $viewCommand;
 	
 	}
-
 
 	function renderLastCommand() {
 
