@@ -208,20 +208,14 @@ if (!!panier) {
       .getItem("commande")
       .split(/,/)
       .forEach((id) => TabsPanier.push(id));
-<<<<<<< HEAD
     sessionStorage
       .getItem("commandeTitle")
       .split(/,/)
       .forEach((title) => TabsTitle.push(title.replace('-',' ')));
-    TabsPanier.forEach(
-      (id, i) =>
-        {panierContainer.innerHTML += `
-=======
 
     TabsPanier.forEach(
       (id, i) =>
       (panierContainer.innerHTML += `
->>>>>>> 9ed4b3ebf32025fa4168d0d0e40ebc1e47e3c964
         <div class="article">
         <span style="opacity:0;">${i}</span>
           <img src="view/assets/img/fimo${id}.png" alt="image d'un article ">
@@ -231,10 +225,10 @@ if (!!panier) {
               <button onClick=retirePanier(this) >Retiré du panier</button>
           </div>
       </div>
-          `
-        }
-    );
-  }
+          `)
+        )
+      }
+  
   // configuration de la taille de la page
   window.addEventListener("load", () => {
     const articles = document.querySelectorAll(".article");
@@ -275,7 +269,6 @@ if (!!panier) {
     location.reload();
   }
 }
-
 if (!!homePage) {
   let progress = 0;
   addEventListener("load", () => {
