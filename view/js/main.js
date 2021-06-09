@@ -18,6 +18,7 @@ const panier = document.querySelector(".panier");
 const homePage = document.querySelector(".homepage");
 const inputEmail = document.querySelectorAll("form-input");
 const TabsPanier = [];
+const TabsTitle = [];
 const contact = document.querySelector(".contact");
 // Evenement
 hamburgerList.addEventListener(
@@ -160,14 +161,20 @@ if (!!ContainerProduit) {
   document.body.classList.toggle("body-product");
   function ajoutPanier() {
     TabsPanier.unshift(document.location.search.replace(/\D/g, ""));
+    TabsTitle.unshift(document.querySelector('.product-title').firstElementChild.textContent.replace(" ", "-"));
     if (sessionStorage.getItem("commande")) {
       const item = sessionStorage.getItem("commande").trim().split(",");
-      console.log("item", item);
       item.forEach((id) => TabsPanier.push(id));
-      console.log("tabs Panier", TabsPanier);
       sessionStorage.setItem("commande", TabsPanier);
+      // title
+      const itemTitles = sessionStorage.getItem("commandeTitle").split(" ");
+      console.log(itemTitles);
+      itemTitles.forEach((title) => TabsTitle.push(title));
+      sessionStorage.setItem("commandeTitle", TabsTitle);
     } else {
       sessionStorage.setItem("commande", TabsPanier);
+      // titles
+      sessionStorage.setItem("commandeTitle", TabsTitle);
     }
     while (TabsPanier.length > 0) TabsPanier.pop();
     const popUpValiderComande = document.querySelector(".valider-commande");
@@ -191,7 +198,6 @@ if (!!panier) {
   if (sessionStorage.getItem("commande")) {
     btnValiderAchat.style.display = "initial";
   } else {
-    console.log("not in");
     btnValiderAchat.style.display = "none";
   }
   // affichage des differentes commande dans la page de panier
@@ -200,20 +206,24 @@ if (!!panier) {
       .getItem("commande")
       .split(/,/)
       .forEach((id) => TabsPanier.push(id));
-    console.log(TabsPanier);
+    sessionStorage
+      .getItem("commandeTitle")
+      .split(/,/)
+      .forEach((title) => TabsTitle.push(title.replace('-',' ')));
     TabsPanier.forEach(
       (id, i) =>
-        (panierContainer.innerHTML += `
+        {panierContainer.innerHTML += `
         <div class="article">
         <span style="opacity:0;">${i}</span>
           <img src="view/assets/img/fimo${id}.png" alt="image d'un article ">
           <div class="infos">
-              <h4>Les sushi Nulla ex libero porta eget</h4>
+              <h4>${TabsTitle[i]}</h4>
               <span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum doloribus maxime, eius mollitia velit ut minima delectus, placeat, eos ad. Sit, cum. Nobis ullam deleniti nesciunt ratione, unde nostrum?</span>
               <button onClick=retirePanier(this) >Retiré du panier</button>
           </div>
       </div>
-          `)
+          `
+        }
     );
   }
   // configuration de la taille de la page
