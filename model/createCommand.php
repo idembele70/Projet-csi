@@ -5,7 +5,7 @@ include 'command.php';
 // start the session
 session_start();
 // Verification
-if ($_POST && $_SESSION) {
+if (isset($_POST) && isset($_SESSION['id'])) {
     // Create data
     $nameId = (int) $_SESSION['id'];
     $data = (array) $_POST;

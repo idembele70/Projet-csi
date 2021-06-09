@@ -19,6 +19,7 @@ const homePage = document.querySelector(".homepage");
 const inputEmail = document.querySelectorAll("form-input");
 const TabsPanier = [];
 const contact = document.querySelector(".contact");
+
 // Evenement
 hamburgerList.addEventListener(
   "click",
@@ -48,8 +49,8 @@ hamburgerList.addEventListener(
       // afficher e404 apres avoir ferme le menu
       e404
         ? setTimeout(() => {
-            e404.style.opacity = 1;
-          }, 500)
+          e404.style.opacity = 1;
+        }, 500)
         : null;
       // mettre le header a disable
       header.classList.remove("header-enable");
@@ -146,6 +147,7 @@ if (!!e404) {
       "px";
   }, 200);
 }
+
 // Go To home page
 logo.onclick = function () {
   location.href = "./";
@@ -158,6 +160,7 @@ if (!!ContainerProduit) {
   else btnAjoutPanier.disabled = false;
 
   document.body.classList.toggle("body-product");
+
   function ajoutPanier() {
     TabsPanier.unshift(document.location.search.replace(/\D/g, ""));
     if (sessionStorage.getItem("commande")) {
@@ -182,7 +185,6 @@ if (!!ContainerProduit) {
 }
 
 // Panier
-
 if (!!panier) {
   document.body.classList.toggle("body-panier");
   const panierContainer = document.querySelector(".panier");
@@ -191,7 +193,6 @@ if (!!panier) {
   if (sessionStorage.getItem("commande")) {
     btnValiderAchat.style.display = "initial";
   } else {
-    console.log("not in");
     btnValiderAchat.style.display = "none";
   }
   // affichage des differentes commande dans la page de panier
@@ -200,10 +201,10 @@ if (!!panier) {
       .getItem("commande")
       .split(/,/)
       .forEach((id) => TabsPanier.push(id));
-    console.log(TabsPanier);
+
     TabsPanier.forEach(
       (id, i) =>
-        (panierContainer.innerHTML += `
+      (panierContainer.innerHTML += `
         <div class="article">
         <span style="opacity:0;">${i}</span>
           <img src="view/assets/img/fimo${id}.png" alt="image d'un article ">
@@ -233,8 +234,8 @@ if (!!panier) {
         "px";
     }
   });
-  // Envoyer le formulaire vers commande.php en post
 
+  // Envoyer le formulaire vers commande.php en post
   const formPanier = document.querySelector(".form-panier");
   const formContaint = [];
   TabsPanier.forEach((id) =>

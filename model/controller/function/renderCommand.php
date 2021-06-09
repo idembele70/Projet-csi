@@ -14,7 +14,7 @@ function renderCommand(int $persoAct) {
         exit('Problème de connexion à la DB.'.$erreur);
     }
     
-    foreach ($tab_command waas $row) {
+    foreach ($tab_command as $row) {
         // Get datas
         $viewCommand .= '<div>';
         $viewCommand .= '<span>'.$row['idCommande'].'</span>';
