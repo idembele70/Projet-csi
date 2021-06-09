@@ -171,7 +171,6 @@ if (!!ContainerProduit) {
       sessionStorage.setItem("commande", TabsPanier);
       // title
       const itemTitles = sessionStorage.getItem("commandeTitle").split(" ");
-      console.log(itemTitles);
       itemTitles.forEach((title) => TabsTitle.push(title));
       sessionStorage.setItem("commandeTitle", TabsTitle);
     } else {
@@ -211,7 +210,7 @@ if (!!panier) {
     sessionStorage
       .getItem("commandeTitle")
       .split(/,/)
-      .forEach((title) => TabsTitle.push(title.replace('-',' ')));
+      .forEach((title) => TabsTitle.push(title.replace('-', ' ')));
 
     TabsPanier.forEach(
       (id, i) =>
@@ -226,9 +225,9 @@ if (!!panier) {
           </div>
       </div>
           `)
-        )
-      }
-  
+    )
+  }
+
   // configuration de la taille de la page
   window.addEventListener("load", () => {
     const articles = document.querySelectorAll(".article");
