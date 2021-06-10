@@ -11,7 +11,7 @@ require('vendor/autoload.php');
 
 // Instanciation of the object AltoRouter
 $router = new AltoRouter();
-$router->setBasePath('/Projet-csi');
+// $router->setBasePath('/Projet-csi');
 
 // Route's definition
 // Definition default route
@@ -33,10 +33,6 @@ $router->map('GET','/panier', function() {
 // Definition espace perso route
 $router->map('GET','/espace_perso', function() {
     include('view/espacePerso.php');
-});
-// Definition page 403 route
-$router->map('GET','/403', function() {
-    include('view/403.php');
 });
 // Definition mentions légales route
 $router->map('GET','/mentions_legales', function() {

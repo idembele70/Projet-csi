@@ -35,7 +35,7 @@
 
 
         <h1 class="titre_article">
-            Les Articles
+            Articles
         </h1>
     <div class="container_article_item">
         <a class="link_article" href="produit?id=1">
